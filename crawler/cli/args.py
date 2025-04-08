@@ -62,6 +62,7 @@ def parse_args() -> Config:
         default=False,
     )
     parser.add_argument(
+        "-c",
         "--concurrency",
         help="Maximum number threads to be used",
         type=int,

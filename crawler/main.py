@@ -33,34 +33,38 @@ def start_crawling(cfg: cli.Config) -> None:
         cfg.max_concurrency
     )
 
-    warc = WarcControler(cfg)
+    warc = WarcControler(config=cfg)
 
-    enqueue_seeds(cfg.seeds, frontier)
+    enqueue_seeds(seed_file=cfg.seeds, frontier=frontier)
 
     with ThreadPoolExecutor(max_workers=cfg.max_concurrency) as executor:
-        while frontier and cfg.run:
-            url = frontier.get()
+        while cfg.run:
+            url: str | None = frontier.get()
             if not url or url in visited:
                 continue
 
-            domain = url.split("/")[2]
-            robot_rules = fetch_robots_txt(domain, robots_cache)
+            domain = url.split(sep="/")[2]
+            robot_rules: RobotFileParser | None = fetch_robots_txt(
+                domain=domain, robots_cache=robots_cache)
             if not robot_rules:
                 continue
 
             executor.submit(fetch_page, url, robot_rules,
                             frontier, visited, domain_metadata, semaphore, cfg, warc)
+        if not cfg.run:
+            executor.shutdown(wait=True, cancel_futures=True)
 
 
-def fetch_page(url: str, robot_rules: RobotFileParser, frontier: Frontier, visited: Set[str], domain_metadata: Dict[str, DomainControler], semaphore: threading.Semaphore, config: cli.Config, warc: WarcControler):
+def fetch_page(url: str, robot_rules: RobotFileParser, frontier: Frontier, visited: Set[str], domain_metadata: Dict[str, DomainControler], semaphore: threading.Semaphore, config: cli.Config, warc: WarcControler) -> None:
     """Fetches a page, extracts links and the title, and marks it as visited."""
-    domain = url.split("/")[2]
+    domain: str = url.split(sep="/")[2]
     if domain not in domain_metadata:
-        domain_metadata[domain] = DomainControler(config)
+        domain_metadata[domain] = DomainControler(args=config)
 
     with domain_metadata[domain].lock:
         crawl_delay: float = float(
-            robot_rules.crawl_delay(config.user_agent) or config.default_crawl_delay
+            robot_rules.crawl_delay(
+                useragent=config.user_agent) or config.default_crawl_delay
         )
         last_time: float = domain_metadata[domain].last_request_time or 0
         elapsed: float = time.time() - last_time
@@ -70,18 +74,19 @@ def fetch_page(url: str, robot_rules: RobotFileParser, frontier: Frontier, visit
 
         domain_metadata[domain].last_request_time = time.time()
 
-    if not robot_rules.can_fetch(config.user_agent, url):
+    if not robot_rules.can_fetch(useragent=config.user_agent, url=url):
         return
 
+    response: requests.Response
     with semaphore and domain_metadata[domain].semaphore:
         try:
             response = requests.get(
                 url, timeout=5, headers=config.fetch_header)
             response.raise_for_status()
-        except requests.RequestException as e:
+        except requests.RequestException:
             return
 
-    soup = BeautifulSoup(response.text, "html.parser")
+    soup = BeautifulSoup(markup=response.text, features="html.parser")
 
     # remove unwanted elements
     for element in soup(["script", "style", "noscript"]):
@@ -102,10 +107,7 @@ def fetch_page(url: str, robot_rules: RobotFileParser, frontier: Frontier, visit
             f'"Timestamp": {timestamp}'
             r'}'
         )
-
-    http_headers = f"HTTP/1.1 {response.status_code} OK\n" + \
-        "\n".join(f"{k}: {v}" for k, v in response.headers.items())
-    warc.write(url, http_headers, text_content)
+    warc.write(url, response)
 
     links: Set[str] = {
         a["href"] for a in soup.find_all("a", href=True)    # type: ignore

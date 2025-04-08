@@ -1,16 +1,20 @@
-from queue import Queue, Empty
+from queue import PriorityQueue, Empty
+import random
+from typing import Tuple
 
 
 class Frontier:
     def __init__(self) -> None:
-        self.queue: Queue[str] = Queue()
+        self.queue: PriorityQueue[Tuple[int, str]] = PriorityQueue()
 
     def put(self, url: str) -> None:
-        self.queue.put(item=url)
+        prio: int = random.randrange(0, 1000)
+        self.queue.put(item=(prio, url))
 
     def get(self) -> str | None:
         try:
-            return self.queue.get()
+            _, url = self.queue.get()
+            return url
         except Empty:
             return None
 
