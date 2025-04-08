@@ -2,11 +2,12 @@ import json
 import os
 import shutil
 import threading
-from typing import Any, Dict, Set, List
+from typing import Any, Dict, Set
 import requests
+from io import BufferedWriter
+
 from cli.args import Config
 from frontier.frontier import Frontier
-from io import BufferedWriter
 from warcio.warcwriter import WARCWriter
 from warcio.recordloader import ArcWarcRecord
 from warcio.statusandheaders import StatusAndHeaders
@@ -24,9 +25,6 @@ class WarcControler:
     save_interval: int
     use_checkpoint: bool
     make_checkpoints: bool
-    max_pages: int
-    show_progress: bool
-    run: List[bool]
 
     def __init__(self, config: Config) -> None:
         """Initialize the WARC controller with a thread lock and first file."""
@@ -36,12 +34,9 @@ class WarcControler:
         self.file_index = 1
         self.count = 0
         self.lock = threading.Lock()
-        self.max_pages = config.max_page_count
         self.use_checkpoint = config.use_checkpoint
         self.make_checkpoints = config.make_checkpoints
-        self.show_progress = config.progress
         self.save_interval = config.save_interval
-        self.run = [config.run]  # pass by reference
 
         if self.use_checkpoint:
             self._load_checkpoint()
@@ -61,7 +56,7 @@ class WarcControler:
                 self.count = checkpoint_data["count"]
 
                 for url in checkpoint_data["frontier"]:
-                    self.frontier.put(url)
+                    self.frontier.put(url=url)
 
                 self.visited.update(checkpoint_data["visited"])
 
@@ -88,7 +83,7 @@ class WarcControler:
         with self.lock:
             headers_list = resp.raw.headers.items()
             http_headers = StatusAndHeaders(
-                '200 OK', headers_list, protocol='HTTP/1.0')
+                statusline='200 OK', headers=headers_list, protocol='HTTP/1.0')
 
             record: ArcWarcRecord = self.writer.create_warc_record(  # type: ignore
                 uri=url,
@@ -96,17 +91,10 @@ class WarcControler:
                 payload=resp.raw,
                 http_headers=http_headers,
             )
-            
+
             self.writer.write_record(record=record)  # type: ignore
 
             self.count += 1
-
-            if self.show_progress:
-                overall_count = self.count + 1000 * (self.file_index - 1)
-                print(f"{overall_count} of {self.max_pages}")
-
-            if self.count >= self.max_pages:
-                self.run[0] = False
 
             if self.count >= self.save_interval:
                 self.file.flush()

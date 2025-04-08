@@ -4,13 +4,13 @@ from .defaults import *
 
 
 class Config:
-    seeds: str
+    seed_file: str
     corpus_dir: str
 
     max_page_count: int
 
     debug: bool
-    progress: bool
+    show_progress: bool
 
     user_agent: str
     fetch_header: Dict[str, str]
@@ -34,7 +34,7 @@ def parse_args() -> Config:
         "--seeds",
         help="Seed URLs to begin crawling",
         type=str,
-        dest='seeds',
+        dest='seed_file',
         required=True,
     )
     parser.add_argument(
@@ -55,15 +55,15 @@ def parse_args() -> Config:
     )
     parser.add_argument(
         "-p",
-        "--progress",
+        "--show-progress",
         help="Show progress",
         action='store_true',
-        dest='progress',
+        dest='show_progress',
         default=False,
     )
     parser.add_argument(
         "-c",
-        "--concurrency",
+        "--max-concurrency",
         help="Maximum number threads to be used",
         type=int,
         default=DEFAULT_MAX_CONCURRENCY,
