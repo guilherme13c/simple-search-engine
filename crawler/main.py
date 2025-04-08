@@ -1,151 +1,180 @@
-from concurrent.futures import ThreadPoolExecutor
-import threading
+import asyncio
 import time
 from typing import Dict, Set
 from urllib.robotparser import RobotFileParser
 from bs4 import BeautifulSoup
 import requests
-from cli import args as cli
-from frontier.frontier import *
-from cli.defaults import *
+
+import cProfile
+import pstats
+
+from cli import args
 from domain_utils import DomainControler
-from warc_utils import WarcControler
+from frontier.frontier import Frontier
 
 
-def main() -> None:
-    cfg: cli.Config = cli.parse_args()
+class Crawler:
+    cfg: args.Config
+    frontier: Frontier
+    visited: Set[str]
+    domain_data: Dict[str, DomainControler]
+    semaphore: asyncio.Semaphore
+    run: bool
+    count: int
+    count_lock: asyncio.Lock
 
-    start_crawling(cfg)
+    def __init__(self, cfg: args.Config) -> None:
+        self.cfg = cfg
+        self.run = False
 
+        self.frontier = Frontier()
+        self.visited = set()
+        self.domain_data = dict()
+        self.semaphore = asyncio.Semaphore(value=cfg.max_concurrency)
 
-def start_crawling(cfg: cli.Config) -> None:
-    """Crawl using a thread pool to limit concurrency."""
+        self.count = 0
+        self.count_lock = asyncio.Lock()
 
-    frontier = Frontier()
+    async def begin(self) -> None:
+        await self._enqueue_seeds()
 
-    visited: Set[str] = set()
+        self.run = True
 
-    robots_cache: Dict[str, RobotFileParser] = dict()
-
-    domain_metadata: Dict[str, DomainControler] = dict()
-
-    semaphore: threading.Semaphore = threading.Semaphore(
-        cfg.max_concurrency
-    )
-
-    warc = WarcControler(config=cfg)
-
-    enqueue_seeds(seed_file=cfg.seeds, frontier=frontier)
-
-    with ThreadPoolExecutor(max_workers=cfg.max_concurrency) as executor:
-        while cfg.run:
-            url: str | None = frontier.get()
-            if not url or url in visited:
+        while self.run:
+            url: str | None = await self.frontier.get()
+            if not url or url in self.visited:
                 continue
+            await self._fetch_page(url)
+            self.frontier.queue.task_done()
 
-            domain = url.split(sep="/")[2]
-            robot_rules: RobotFileParser | None = fetch_robots_txt(
-                domain=domain, robots_cache=robots_cache)
-            if not robot_rules:
-                continue
+            async with self.count_lock:
+                self.count += 1
 
-            executor.submit(fetch_page, url, robot_rules,
-                            frontier, visited, domain_metadata, semaphore, cfg, warc)
-        if not cfg.run:
-            executor.shutdown(wait=True, cancel_futures=True)
+                if self.count >= self.cfg.max_page_count:
+                    self.run = False
 
+    async def _enqueue_seeds(self) -> None:
+        with open(file=self.cfg.seed_file, mode='r') as f:
+            seed: str = "aaaa"
+            while seed:
+                seed: str = f.readline().strip("\r\n ")
+                if not seed:
+                    continue
+                await self.frontier.put(seed)
 
-def fetch_page(url: str, robot_rules: RobotFileParser, frontier: Frontier, visited: Set[str], domain_metadata: Dict[str, DomainControler], semaphore: threading.Semaphore, config: cli.Config, warc: WarcControler) -> None:
-    """Fetches a page, extracts links and the title, and marks it as visited."""
-    domain: str = url.split(sep="/")[2]
-    if domain not in domain_metadata:
-        domain_metadata[domain] = DomainControler(args=config)
-
-    with domain_metadata[domain].lock:
-        crawl_delay: float = float(
-            robot_rules.crawl_delay(
-                useragent=config.user_agent) or config.default_crawl_delay
-        )
-        last_time: float = domain_metadata[domain].last_request_time or 0
-        elapsed: float = time.time() - last_time
-
-        if elapsed < crawl_delay:
-            time.sleep(crawl_delay - elapsed)
-
-        domain_metadata[domain].last_request_time = time.time()
-
-    if not robot_rules.can_fetch(useragent=config.user_agent, url=url):
-        return
-
-    response: requests.Response
-    with semaphore and domain_metadata[domain].semaphore:
+    async def _fetch_robots_txt(self, domain: str) -> RobotFileParser | None:
+        robots_url = f'http://{domain}/robots.txt'
         try:
-            response = requests.get(
-                url, timeout=5, headers=config.fetch_header)
-            response.raise_for_status()
-        except requests.RequestException:
+            resp = await self._fetch(url=robots_url)
+            text = resp.text
+        except Exception:
+            return None
+
+        rp = RobotFileParser()
+        rp.parse(text.splitlines())
+
+        return rp
+
+    async def _fetch_page(self, url: str) -> None:
+        domain = url.split("/")[2]
+
+        robot_rules: RobotFileParser | None = await self._fetch_robots_txt(domain=domain)
+        if not robot_rules:
             return
 
-    soup = BeautifulSoup(markup=response.text, features="html.parser")
+        if domain not in self.domain_data:
+            rb = await self._fetch_robots_txt(domain=domain)
+            if not rb:
+                return
 
-    # remove unwanted elements
-    for element in soup(["script", "style", "noscript"]):
-        element.extract()
+            self.domain_data[domain] = DomainControler(
+                args=self.cfg,
+                robots=rb,
+            )
 
-    text_content = str(soup.prettify())
+        dm: DomainControler = self.domain_data[domain]
+        async with dm.lock:
+            crawl_delay: float = float(
+                dm.robots.crawl_delay(
+                    useragent=self.cfg.user_agent) or self.cfg.default_crawl_delay
+            )
+            last_time: float = dm.last_request_time or 0
+            elapsed: float = time.time() - last_time
 
-    if config.debug:
-        title: str = soup.title.string.strip() if soup.title else ""  # type: ignore
-        timestamp = int(time.time())
+            if elapsed < crawl_delay:
+                await asyncio.sleep(crawl_delay - elapsed)
 
-        text = " ".join(text_content[:1000].split()[:20])
-        print(
-            r'{'
-            f'"Title": "{title}",'
-            f'"URL": "{url},'
-            f'"Text": "{text}",'
-            f'"Timestamp": {timestamp}'
-            r'}'
-        )
-    warc.write(url, response)
+            dm.last_request_time = time.time()
 
-    links: Set[str] = {
-        a["href"] for a in soup.find_all("a", href=True)    # type: ignore
-    }
+        if not robot_rules.can_fetch(useragent=self.cfg.user_agent, url=url):
+            return
 
-    for link in links:
-        if link.startswith("http") and link not in visited:
-            frontier.put(link)
+        response: requests.Response
+        async with self.semaphore and dm.semaphore:
+            try:
+                response = await self._fetch(url=url)
+            except requests.RequestException:
+                return
 
-    visited.add(url)
+        soup = BeautifulSoup(markup=response.text, features="html.parser")
+
+        for element in soup(name=["script", "style", "noscript"]):
+            element.extract()
+
+        text_content = str(soup.get_text()).replace("\n\n", "")
+
+        if self.cfg.debug:
+            title: str = soup.title.string.strip(
+                "\n\t\r ") if soup.title and soup.title.string else ""  # type: ignore
+            timestamp = int(time.time())
+
+            text = " ".join(text_content[:1000].split()[:20])
+            print(
+                r'{'
+                f'"Title": "{title}",'
+                f'"URL": "{url},'
+                f'"Text": "{text}",'
+                f'"Timestamp": {timestamp}'
+                r'}'
+            )
+
+        links: Set[str] = {
+            a["href"] for a in soup.find_all("a", href=True)    # type: ignore
+        }
+
+        async with asyncio.TaskGroup() as tasks:
+            for link in links:
+                if link.startswith("http") and link not in self.visited:
+                    tasks.create_task(self.frontier.put(link))
+
+        self.visited.add(url)
+
+    async def _fetch(self, url: str) -> requests.Response:
+        async with self.semaphore:
+            response = await asyncio.to_thread(requests.get, url, timeout=5, headers=self.cfg.fetch_header)
+            response.raise_for_status()
+            return response
 
 
-def fetch_robots_txt(domain: str, robots_cache: Dict[str, RobotFileParser]) -> RobotFileParser | None:
-    """Fetch and parse robots.txt for a domain, caching the result."""
-    if domain in robots_cache:
-        return robots_cache[domain]
+async def main() -> None:
+    cfg: args.Config = args.parse_args()
+    crawler = Crawler(cfg=cfg)
 
-    robots_url = f'http://{domain}/robots.txt'
-    rp: RobotFileParser = RobotFileParser(robots_url)
+    profiler = cProfile.Profile()
+    profiler.enable()
 
-    try:
-        rp.read()
-    except:
-        return None
+    crawler_task = asyncio.create_task(crawler.begin())
 
-    robots_cache[domain] = rp
-    return rp
+    await crawler.frontier.queue.join()
+    crawler.run = False
+    await crawler_task
 
+    profiler.disable()
 
-def enqueue_seeds(seed_file: str, frontier: Frontier) -> None:
-    with open(file=seed_file, mode='r') as f:
-        seed: str = f.readline().strip("\r\n ")
-        while seed:
-            if not seed:
-                continue
-            frontier.put(seed)
-            seed: str = f.readline().strip("\r\n ")
+    with open("profile_stats.txt", "w") as f:
+        stats = pstats.Stats(profiler, stream=f).sort_stats("cumtime")
+        stats.print_stats()
 
 
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())

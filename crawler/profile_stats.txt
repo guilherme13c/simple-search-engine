@@ -1,0 +1,951 @@
+         1190349 function calls (1189924 primitive calls) in 66.127 seconds
+
+   Ordered by: cumulative time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+    83/82    0.002    0.000   66.129    0.806 /usr/lib/python3.13/asyncio/base_events.py:1960(_run_once)
+       82    0.000    0.000   65.635    0.800 /usr/lib/python3.13/selectors.py:435(select)
+       82   57.300    0.699   57.300    0.699 {method 'poll' of 'select.epoll' objects}
+       21    0.000    0.000    8.334    0.397 /usr/lib/python3.13/concurrent/futures/thread.py:54(run)
+       21    0.000    0.000    8.333    0.397 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/api.py:62(get)
+       21    0.000    0.000    8.332    0.397 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/api.py:14(request)
+       21    0.000    0.000    8.330    0.397 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/sessions.py:500(request)
+    38/21    0.001    0.000    8.316    0.396 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/sessions.py:673(send)
+       38    0.001    0.000    8.241    0.217 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/adapters.py:613(send)
+       38    0.001    0.000    8.227    0.216 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/connectionpool.py:592(urlopen)
+       38    0.001    0.000    8.222    0.216 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/connectionpool.py:377(_make_request)
+       24    0.000    0.000    5.821    0.243 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/connectionpool.py:1085(_validate_conn)
+       24    0.001    0.000    5.820    0.242 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/connection.py:669(connect)
+       38    0.000    0.000    5.466    0.144 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/connection.py:192(_new_conn)
+       38    0.001    0.000    5.464    0.144 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/util/connection.py:27(create_connection)
+       38    5.287    0.139    5.287    0.139 {method 'connect' of '_socket.socket' objects}
+    55/38    0.001    0.000    1.954    0.051 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/sessions.py:159(resolve_redirects)
+      260    0.001    0.000    1.910    0.007 /usr/lib/python3.13/socket.py:706(readinto)
+      757    0.001    0.000    1.908    0.003 {method 'readline' of '_io.BufferedReader' objects}
+       38    0.001    0.000    1.883    0.050 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/connection.py:485(getresponse)
+       38    0.000    0.000    1.876    0.049 /usr/lib/python3.13/http/client.py:1386(getresponse)
+       38    0.001    0.000    1.875    0.049 /usr/lib/python3.13/http/client.py:324(begin)
+       38    0.001    0.000    1.861    0.049 /usr/lib/python3.13/http/client.py:291(_read_status)
+      246    0.001    0.000    1.274    0.005 /usr/lib/python3.13/ssl.py:1289(recv_into)
+      246    0.000    0.000    1.273    0.005 /usr/lib/python3.13/ssl.py:1129(read)
+      246    1.273    0.005    1.273    0.005 {method 'read' of '_ssl._SSLSocket' objects}
+       24    0.001    0.000    0.859    0.036 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/connection.py:846(_ssl_wrap_socket_and_match_hostname)
+       24    0.000    0.000    0.858    0.036 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/util/ssl_.py:390(ssl_wrap_socket)
+       24    0.000    0.000    0.857    0.036 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/util/ssl_.py:488(_ssl_wrap_socket_impl)
+       24    0.000    0.000    0.857    0.036 /usr/lib/python3.13/ssl.py:449(wrap_socket)
+       24    0.001    0.000    0.857    0.036 /usr/lib/python3.13/ssl.py:990(_create)
+       24    0.000    0.000    0.854    0.036 /usr/lib/python3.13/ssl.py:1365(do_handshake)
+       24    0.854    0.036    0.854    0.036 {method 'do_handshake' of '_ssl._SSLSocket' objects}
+       14    0.635    0.045    0.635    0.045 {method 'recv_into' of '_socket.socket' objects}
+       38    0.001    0.000    0.517    0.014 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/connection.py:369(request)
+       38    0.000    0.000    0.510    0.013 /usr/lib/python3.13/http/client.py:1322(endheaders)
+       38    0.000    0.000    0.510    0.013 /usr/lib/python3.13/http/client.py:1084(_send_output)
+       38    0.000    0.000    0.509    0.013 /usr/lib/python3.13/http/client.py:1029(send)
+       14    0.000    0.000    0.507    0.036 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/connection.py:275(connect)
+1141/1140    0.001    0.000    0.489    0.000 /usr/lib/python3.13/asyncio/events.py:87(_run)
+1141/1140    0.001    0.000    0.489    0.000 {method 'run' of '_contextvars.Context' objects}
+    38/37    0.000    0.000    0.482    0.013 /home/guilherme13c/projects/simple-search-engine/crawler/main.py:38(begin)
+    47/46    0.001    0.000    0.480    0.010 /home/guilherme13c/projects/simple-search-engine/crawler/main.py:78(_fetch_page)
+        8    0.000    0.000    0.358    0.045 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/__init__.py:209(__init__)
+        8    0.000    0.000    0.357    0.045 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/__init__.py:650(_feed)
+        8    0.000    0.000    0.357    0.045 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/builder/_htmlparser.py:449(feed)
+        8    0.000    0.000    0.357    0.045 /usr/lib/python3.13/html/parser.py:104(feed)
+       16    0.027    0.002    0.357    0.022 /usr/lib/python3.13/html/parser.py:134(goahead)
+     5322    0.028    0.000    0.199    0.000 /usr/lib/python3.13/html/parser.py:301(parse_starttag)
+       38    0.000    0.000    0.176    0.005 /usr/lib/python3.13/socket.py:960(getaddrinfo)
+       38    0.174    0.005    0.174    0.005 {built-in method _socket.getaddrinfo}
+     5322    0.011    0.000    0.131    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/builder/_htmlparser.py:142(handle_starttag)
+     5322    0.015    0.000    0.114    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/__init__.py:987(handle_starttag)
+    12828    0.029    0.000    0.100    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/__init__.py:826(endData)
+     4273    0.009    0.000    0.067    0.000 /usr/lib/python3.13/html/parser.py:379(parse_endtag)
+      100    0.000    0.000    0.060    0.001 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/models.py:890(content)
+      401    0.000    0.000    0.060    0.000 {method 'join' of 'bytes' objects}
+      132    0.000    0.000    0.059    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/models.py:816(generate)
+      132    0.000    0.000    0.059    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/response.py:1044(stream)
+       91    0.000    0.000    0.057    0.001 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/response.py:1173(read_chunked)
+     5319    0.004    0.000    0.056    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/builder/_htmlparser.py:204(handle_endtag)
+       40    0.000    0.000    0.055    0.001 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/element.py:2715(find_all)
+       40    0.000    0.000    0.055    0.001 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/element.py:1079(_find_all)
+       40    0.001    0.000    0.054    0.001 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/filter.py:163(find_all)
+     1359    0.011    0.000    0.053    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/filter.py:129(filter)
+     5214    0.004    0.000    0.051    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/__init__.py:1053(handle_endtag)
+       99    0.000    0.000    0.047    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/response.py:1133(_update_chunk_length)
+       26    0.000    0.000    0.047    0.002 /home/guilherme13c/projects/simple-search-engine/crawler/main.py:65(_fetch_robots_txt)
+       13    0.008    0.001    0.045    0.003 /usr/lib/python3.13/urllib/robotparser.py:83(parse)
+     5330    0.011    0.000    0.040    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/element.py:1618(__init__)
+     3090    0.003    0.000    0.031    0.000 /usr/lib/python3.13/urllib/robotparser.py:220(__init__)
+    10882    0.013    0.000    0.031    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/__init__.py:867(object_was_parsed)
+    32321    0.010    0.000    0.031    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/filter.py:717(match)
+        8    0.000    0.000    0.030    0.004 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/element.py:2232(__call__)
+    38797    0.027    0.000    0.027    0.000 {method 'match' of 're.Pattern' objects}
+     1133    0.002    0.000    0.023    0.000 /usr/lib/python3.13/_markupbase.py:165(parse_comment)
+    10882    0.012    0.000    0.022    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/element.py:1291(__new__)
+     5322    0.016    0.000    0.022    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/builder/__init__.py:382(_replace_cdata_list_attribute_values)
+     1134    0.001    0.000    0.020    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/builder/_htmlparser.py:285(handle_comment)
+    21557    0.011    0.000    0.018    0.000 /usr/lib/python3.13/_markupbase.py:44(updatepos)
+    27094    0.017    0.000    0.017    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/element.py:376(setup)
+150002/149848    0.015    0.000    0.016    0.000 {built-in method builtins.isinstance}
+    10882    0.010    0.000    0.016    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/__init__.py:732(string_container)
+    10407    0.007    0.000    0.016    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/filter.py:538(matches_tag)
+     5214    0.007    0.000    0.014    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/__init__.py:950(_popToTag)
+32622/32600    0.006    0.000    0.014    0.000 {built-in method builtins.next}
+     5322    0.004    0.000    0.013    0.000 /usr/lib/python3.13/html/parser.py:345(check_for_whole_start_tag)
+      102    0.004    0.000    0.013    0.000 /usr/lib/python3.13/urllib/request.py:2495(getproxies_environment)
+       38    0.000    0.000    0.012    0.000 /usr/lib/python3.13/http/client.py:245(parse_headers)
+       41    0.000    0.000    0.011    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/utils.py:826(get_environ_proxies)
+     3599    0.006    0.000    0.011    0.000 /usr/lib/python3.13/urllib/parse.py:374(urlparse)
+       38    0.000    0.000    0.011    0.000 /usr/lib/python3.13/http/client.py:231(_parse_header_lines)
+        8    0.001    0.000    0.010    0.001 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/element.py:524(get_text)
+       38    0.000    0.000    0.010    0.000 /usr/lib/python3.13/email/parser.py:56(parsestr)
+     3141    0.003    0.000    0.010    0.000 /usr/lib/python3.13/urllib/parse.py:525(urlunparse)
+       38    0.000    0.000    0.010    0.000 /usr/lib/python3.13/email/parser.py:41(parse)
+     3141    0.002    0.000    0.010    0.000 /usr/lib/python3.13/urllib/parse.py:875(quote)
+    16597    0.010    0.000    0.010    0.000 {method 'search' of 're.Pattern' objects}
+       61    0.000    0.000    0.010    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/utils.py:765(should_bypass_proxies)
+       21    0.000    0.000    0.010    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/sessions.py:457(prepare_request)
+     9442    0.005    0.000    0.009    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/element.py:1873(_all_strings)
+       20    0.000    0.000    0.009    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/sessions.py:302(rebuild_proxies)
+       20    0.000    0.000    0.009    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/utils.py:864(resolve_proxies)
+      312    0.000    0.000    0.009    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/builder/_htmlparser.py:127(handle_startendtag)
+       38    0.000    0.000    0.008    0.000 /usr/lib/python3.13/email/feedparser.py:173(feed)
+     9797    0.004    0.000    0.008    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/builder/_htmlparser.py:222(handle_data)
+       61    0.000    0.000    0.008    0.000 /usr/lib/python3.13/urllib/request.py:2532(proxy_bypass_environment)
+       76    0.000    0.000    0.008    0.000 /usr/lib/python3.13/email/feedparser.py:178(_call_parse)
+     7139    0.007    0.000    0.008    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/__init__.py:906(_linkage_fixer)
+       76    0.001    0.000    0.007    0.000 /usr/lib/python3.13/email/feedparser.py:218(_parsegen)
+     5330    0.006    0.000    0.007    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/__init__.py:809(pushTag)
+    12138    0.003    0.000    0.007    0.000 <frozen os>:734(__iter__)
+    47996    0.007    0.000    0.007    0.000 {method 'append' of 'list' objects}
+    10029    0.006    0.000    0.007    0.000 /usr/lib/python3.13/urllib/parse.py:119(_coerce_args)
+       38    0.000    0.000    0.007    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/adapters.py:446(get_connection_with_tls_context)
+     3141    0.004    0.000    0.007    0.000 /usr/lib/python3.13/urllib/parse.py:951(quote_from_bytes)
+       21    0.000    0.000    0.007    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/sessions.py:750(merge_environment_settings)
+    16682    0.006    0.000    0.007    0.000 /usr/lib/python3.13/typing.py:426(inner)
+    47832    0.006    0.000    0.006    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/element.py:2763(descendants)
+    36042    0.006    0.000    0.006    0.000 {method 'lower' of 'str' objects}
+       38    0.000    0.000    0.006    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/poolmanager.py:276(connection_from_host)
+       38    0.000    0.000    0.006    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/poolmanager.py:305(connection_from_context)
+     5322    0.005    0.000    0.006    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/__init__.py:786(popTag)
+    16329    0.003    0.000    0.005    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/filter.py:321(matches_tag)
+       21    0.000    0.000    0.005    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/models.py:351(prepare)
+    32287    0.005    0.000    0.005    0.000 {method 'get' of 'dict' objects}
+       38    0.000    0.000    0.005    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/adapters.py:359(build_response)
+    16303    0.005    0.000    0.005    0.000 {method 'group' of 're.Match' objects}
+       38    0.000    0.000    0.005    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/poolmanager.py:330(connection_from_pool_key)
+    20681    0.005    0.000    0.005    0.000 {method 'count' of 'str' objects}
+       37    0.000    0.000    0.005    0.000 /usr/lib/python3.13/weakref.py:585(__call__)
+     3141    0.002    0.000    0.005    0.000 /usr/lib/python3.13/urllib/parse.py:536(urlunsplit)
+    10939    0.003    0.000    0.005    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/__init__.py:1065(handle_data)
+       37    0.000    0.000    0.005    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/connectionpool.py:1170(_close_pool_connections)
+    12200    0.003    0.000    0.005    0.000 <frozen os>:797(decode)
+42762/42735    0.005    0.000    0.005    0.000 {built-in method builtins.len}
+       38    0.000    0.000    0.004    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/poolmanager.py:229(_new_pool)
+    14869    0.004    0.000    0.004    0.000 {built-in method __new__ of type object at 0x7df93bcd7380}
+      112    0.000    0.000    0.004    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/response.py:469(_decode)
+       80    0.000    0.000    0.004    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/response.py:1151(_handle_chunk)
+       38    0.001    0.000    0.004    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/connectionpool.py:175(__init__)
+      107    0.000    0.000    0.004    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/response.py:122(decompress)
+      152    0.000    0.000    0.004    0.000 /usr/lib/python3.13/http/client.py:635(_safe_read)
+      175    0.000    0.000    0.004    0.000 {method 'read' of '_io.BufferedReader' objects}
+       59    0.001    0.000    0.004    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/util/url.py:367(parse_url)
+       83    0.003    0.000    0.003    0.000 {method 'decompress' of 'zlib.Decompress' objects}
+       38    0.001    0.000    0.003    0.000 /usr/lib/python3.13/email/feedparser.py:472(_parse_headers)
+      113    0.000    0.000    0.003    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/cookies.py:124(extract_cookies_to_jar)
+    22674    0.003    0.000    0.003    0.000 {method 'end' of 're.Match' objects}
+      197    0.000    0.000    0.003    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/structures.py:40(__init__)
+      256    0.001    0.000    0.003    0.000 <frozen _collections_abc>:979(update)
+      519    0.000    0.000    0.003    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/frontier/frontier.py:11(put)
+    17040    0.003    0.000    0.003    0.000 {method 'decode' of 'bytes' objects}
+    13023    0.003    0.000    0.003    0.000 {method 'join' of 'str' objects}
+       21    0.000    0.000    0.003    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/models.py:409(prepare_url)
+       41    0.000    0.000    0.003    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/utils.py:204(get_netrc_auth)
+    20115    0.003    0.000    0.003    0.000 {method 'startswith' of 'str' objects}
+       37    0.000    0.000    0.003    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/connection.py:320(close)
+       38    0.000    0.000    0.003    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/_collections.py:240(__init__)
+      516    0.000    0.000    0.003    0.000 /usr/lib/python3.13/asyncio/taskgroups.py:181(create_task)
+    16423    0.003    0.000    0.003    0.000 {method 'strip' of 'str' objects}
+       24    0.000    0.000    0.003    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/connectionpool.py:980(__init__)
+     5322    0.002    0.000    0.002    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/element.py:1812(is_empty_element)
+8662/8600    0.002    0.000    0.002    0.000 {method 'encode' of 'str' objects}
+       97    0.001    0.000    0.002    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/util/url.py:227(_encode_invalid_chars)
+       38    0.001    0.000    0.002    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/_collections.py:335(extend)
+    17284    0.002    0.000    0.002    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/filter.py:259(_base_match)
+    24747    0.002    0.000    0.002    0.000 /usr/lib/python3.13/typing.py:2371(cast)
+    10149    0.002    0.000    0.002    0.000 {method 'rindex' of 'str' objects}
+       42    0.000    0.000    0.002    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/main.py:152(_fetch)
+      418    0.001    0.000    0.002    0.000 /usr/lib/python3.13/queue.py:140(put)
+       37    0.000    0.000    0.002    0.000 /usr/lib/python3.13/http/client.py:1015(close)
+     2757    0.002    0.000    0.002    0.000 {method 'findall' of 're.Pattern' objects}
+      517    0.001    0.000    0.002    0.000 /usr/lib/python3.13/asyncio/base_events.py:461(create_task)
+     3599    0.001    0.000    0.002    0.000 <string>:1(<lambda>)
+       21    0.000    0.000    0.002    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/sessions.py:390(__init__)
+    11908    0.002    0.000    0.002    0.000 {method 'start' of 're.Match' objects}
+      113    0.000    0.000    0.002    0.000 /usr/lib/python3.13/http/cookiejar.py:1680(extract_cookies)
+      445    0.001    0.000    0.002    0.000 /usr/lib/python3.13/queue.py:180(get)
+       25    0.000    0.000    0.002    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/response.py:916(read)
+     1091    0.001    0.000    0.002    0.000 /usr/lib/python3.13/asyncio/base_events.py:823(call_soon)
+      190    0.000    0.000    0.002    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/connection.py:355(putheader)
+       37    0.000    0.000    0.002    0.000 /usr/lib/python3.13/socket.py:501(close)
+     5330    0.001    0.000    0.002    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/builder/__init__.py:636(set_up_substitutions)
+       38    0.000    0.000    0.002    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/connection.py:335(putrequest)
+       42    0.000    0.000    0.002    0.000 /usr/lib/python3.13/asyncio/threads.py:12(to_thread)
+      367    0.000    0.000    0.002    0.000 /usr/lib/python3.13/html/parser.py:123(set_cdata_mode)
+      519    0.000    0.000    0.002    0.000 /usr/lib/python3.13/asyncio/queues.py:125(put)
+     6232    0.001    0.000    0.002    0.000 /usr/lib/python3.13/html/__init__.py:122(unescape)
+      955    0.001    0.000    0.002    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/filter.py:612(_attribute_match)
+      147    0.000    0.000    0.002    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/sessions.py:61(merge_setting)
+     3420    0.001    0.000    0.002    0.000 /usr/lib/python3.13/urllib/parse.py:692(unquote)
+      113    0.000    0.000    0.002    0.000 /usr/lib/python3.13/http/cookiejar.py:1599(make_cookies)
+       23    0.001    0.000    0.002    0.000 /usr/lib/python3.13/ssl.py:1361(_real_close)
+       24    0.000    0.000    0.002    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/element.py:2249(__getattr__)
+      571    0.001    0.000    0.002    0.000 /usr/lib/python3.13/email/_policybase.py:301(header_source_parse)
+      304    0.001    0.000    0.001    0.000 /usr/lib/python3.13/email/message.py:498(get)
+       38    0.000    0.000    0.001    0.000 /usr/lib/python3.13/http/client.py:1138(putrequest)
+       21    0.000    0.000    0.001    0.000 /usr/lib/python3.13/asyncio/base_events.py:887(run_in_executor)
+       38    0.000    0.000    0.001    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/response.py:577(__init__)
+     1112    0.001    0.000    0.001    0.000 /usr/lib/python3.13/asyncio/base_events.py:852(_call_soon)
+      148    0.001    0.000    0.001    0.000 /usr/lib/python3.13/urllib/parse.py:469(urlsplit)
+       38    0.001    0.000    0.001    0.000 /usr/lib/python3.13/http/client.py:213(_read_headers)
+     4633    0.001    0.000    0.001    0.000 {method 'split' of 'str' objects}
+       24    0.000    0.000    0.001    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/element.py:2684(find)
+      439    0.000    0.000    0.001    0.000 <frozen _collections_abc>:808(get)
+      152    0.000    0.000    0.001    0.000 /usr/lib/python3.13/email/message.py:600(get_content_type)
+       21    0.001    0.000    0.001    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/models.py:909(text)
+      154    0.000    0.000    0.001    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/cookies.py:35(__init__)
+       35    0.000    0.000    0.001    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/response.py:864(_raw_read)
+     5330    0.001    0.000    0.001    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/builder/__init__.py:290(can_be_empty_element)
+       38    0.000    0.000    0.001    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/connectionpool.py:256(_get_conn)
+      190    0.001    0.000    0.001    0.000 /usr/lib/python3.13/http/client.py:1294(putheader)
+      795    0.000    0.000    0.001    0.000 /usr/lib/python3.13/email/_policybase.py:319(header_fetch_parse)
+       38    0.000    0.000    0.001    0.000 /usr/lib/python3.13/http/client.py:261(__init__)
+      135    0.000    0.000    0.001    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/util/url.py:301(_normalize_host)
+       10    0.000    0.000    0.001    0.000 /usr/lib/python3.13/urllib/robotparser.py:156(can_fetch)
+      367    0.000    0.000    0.001    0.000 /usr/lib/python3.13/re/__init__.py:287(compile)
+      388    0.000    0.000    0.001    0.000 /usr/lib/python3.13/urllib/parse.py:164(hostname)
+    15737    0.001    0.000    0.001    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/element.py:2219(__bool__)
+       76    0.000    0.000    0.001    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/utils.py:838(select_proxy)
+       38    0.000    0.000    0.001    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/models.py:658(__init__)
+      226    0.001    0.000    0.001    0.000 /usr/lib/python3.13/email/message.py:533(get_all)
+       38    0.000    0.000    0.001    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/adapters.py:546(request_url)
+      389    0.000    0.000    0.001    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/element.py:587(extract)
+       41    0.000    0.000    0.001    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/models.py:610(prepare_cookies)
+      519    0.000    0.000    0.001    0.000 /usr/lib/python3.13/asyncio/queues.py:156(put_nowait)
+        2    0.000    0.000    0.001    0.001 <frozen importlib._bootstrap>:1349(_find_and_load)
+      367    0.000    0.000    0.001    0.000 /usr/lib/python3.13/re/__init__.py:330(_compile)
+      471    0.001    0.000    0.001    0.000 <frozen os>:711(__getitem__)
+       38    0.000    0.000    0.001    0.000 /usr/lib/python3.13/email/feedparser.py:184(close)
+       41    0.000    0.000    0.001    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/cookies.py:140(get_cookie_header)
+        2    0.000    0.000    0.001    0.001 <frozen importlib._bootstrap>:1304(_find_and_load_unlocked)
+       38    0.000    0.000    0.001    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/connectionpool.py:81(__init__)
+      685    0.000    0.000    0.001    0.000 /usr/lib/python3.13/email/feedparser.py:129(__next__)
+       20    0.000    0.000    0.001    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/sessions.py:282(rebuild_auth)
+      795    0.000    0.000    0.001    0.000 /usr/lib/python3.13/email/_policybase.py:289(_sanitize_header)
+      328    0.000    0.000    0.001    0.000 /usr/lib/python3.13/socket.py:100(_intenum_converter)
+       40    0.000    0.000    0.001    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/filter.py:378(__init__)
+      519    0.000    0.000    0.001    0.000 /usr/lib/python3.13/random.py:295(randrange)
+       24    0.001    0.000    0.001    0.000 {method '_wrap_socket' of '_ssl._SSLContext' objects}
+       42    0.000    0.000    0.001    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/adapters.py:202(__init__)
+        2    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap>:911(_load_unlocked)
+      114    0.000    0.000    0.001    0.000 /usr/lib/python3.13/email/message.py:624(get_content_maintype)
+       38    0.000    0.000    0.001    0.000 /usr/lib/python3.13/email/message.py:487(items)
+      115    0.000    0.000    0.001    0.000 /usr/lib/python3.13/contextlib.py:145(__exit__)
+       38    0.001    0.000    0.001    0.000 /usr/lib/python3.13/socket.py:304(makefile)
+        2    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap_external>:1020(exec_module)
+      571    0.000    0.000    0.001    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/_collections.py:300(add)
+      869    0.000    0.000    0.001    0.000 /usr/lib/python3.13/threading.py:398(notify)
+     6160    0.001    0.000    0.001    0.000 {method 'pop' of 'list' objects}
+       82    0.000    0.000    0.001    0.000 <frozen posixpath>:229(expanduser)
+       80    0.000    0.000    0.001    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/cookies.py:521(cookiejar_from_dict)
+       21    0.000    0.000    0.001    0.000 /usr/lib/python3.13/concurrent/futures/thread.py:165(submit)
+     5457    0.001    0.000    0.001    0.000 {method 'endswith' of 'str' objects}
+       38    0.000    0.000    0.001    0.000 /usr/lib/python3.13/email/feedparser.py:102(push)
+     3141    0.001    0.000    0.001    0.000 {method 'rstrip' of 'bytes' objects}
+      505    0.000    0.000    0.001    0.000 <frozen _collections_abc>:897(__iter__)
+  657/655    0.000    0.000    0.001    0.000 <frozen abc>:117(__instancecheck__)
+     4662    0.001    0.000    0.001    0.000 {method 'find' of 'str' objects}
+       21    0.000    0.000    0.001    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/models.py:483(prepare_headers)
+       82    0.000    0.000    0.001    0.000 <frozen genericpath>:16(exists)
+      721    0.001    0.000    0.001    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/_collections.py:257(__getitem__)
+      378    0.000    0.000    0.001    0.000 /usr/lib/python3.13/enum.py:695(__call__)
+     4341    0.001    0.000    0.001    0.000 {method 'keys' of 'dict' objects}
+     1068    0.001    0.000    0.001    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/structures.py:46(__setitem__)
+     5322    0.001    0.000    0.001    0.000 /usr/lib/python3.13/_markupbase.py:36(getpos)
+    10029    0.001    0.000    0.001    0.000 /usr/lib/python3.13/urllib/parse.py:108(_noop)
+       21    0.000    0.000    0.001    0.000 /usr/lib/python3.13/concurrent/futures/_base.py:537(set_result)
+      147    0.000    0.000    0.001    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/utils.py:345(to_key_val_list)
+       24    0.000    0.000    0.001    0.000 /usr/lib/python3.13/ssl.py:1252(sendall)
+       38    0.000    0.000    0.001    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/util/url.py:349(_encode_target)
+       37    0.000    0.000    0.001    0.000 /usr/lib/python3.13/socket.py:497(_real_close)
+      108    0.000    0.000    0.001    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/response.py:741(_error_catcher)
+       58    0.000    0.000    0.001    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/structures.py:76(copy)
+       89    0.001    0.000    0.001    0.000 {built-in method posix.stat}
+      955    0.000    0.000    0.001    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/filter.py:623(_match_attribute_value_helper)
+       21    0.000    0.000    0.001    0.000 /usr/lib/python3.13/asyncio/futures.py:378(_set_state)
+     1447    0.000    0.000    0.001    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/element.py:2160(get)
+       37    0.001    0.000    0.001    0.000 {function socket.close at 0x7df93ae2efc0}
+       38    0.001    0.000    0.001    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/poolmanager.py:95(_default_key_normalizer)
+      279    0.000    0.000    0.001    0.000 <frozen _collections_abc>:815(__contains__)
+       24    0.000    0.000    0.001    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/connectionpool.py:1044(_new_conn)
+      685    0.001    0.000    0.001    0.000 /usr/lib/python3.13/email/feedparser.py:79(readline)
+      426    0.000    0.000    0.001    0.000 /usr/lib/python3.13/urllib/parse.py:205(_hostinfo)
+       38    0.000    0.000    0.001    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/response.py:316(__init__)
+     1054    0.000    0.000    0.001    0.000 /usr/lib/python3.13/threading.py:303(__enter__)
+       38    0.000    0.000    0.001    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/util/response.py:40(assert_header_parsing)
+     4272    0.001    0.000    0.001    0.000 /usr/lib/python3.13/html/parser.py:127(clear_cdata_mode)
+      389    0.001    0.000    0.001    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/element.py:2147(index)
+       74    0.000    0.000    0.001    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/response.py:641(release_conn)
+       21    0.000    0.000    0.001    0.000 /usr/lib/python3.13/asyncio/futures.py:342(_copy_future_state)
+  200/152    0.000    0.000    0.001    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/filter.py:490(_make_match_rules)
+  657/655    0.000    0.000    0.001    0.000 {built-in method _abc._abc_instancecheck}
+       41    0.000    0.000    0.001    0.000 /usr/lib/python3.13/http/cookiejar.py:1356(add_cookie_header)
+      100    0.000    0.000    0.001    0.000 /usr/lib/python3.13/encodings/idna.py:179(encode)
+     1038    0.000    0.000    0.001    0.000 /usr/lib/python3.13/asyncio/queues.py:114(full)
+       20    0.000    0.000    0.001    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/models.py:382(copy)
+       38    0.000    0.000    0.001    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/connectionpool.py:1145(_normalize_host)
+       21    0.000    0.000    0.001    0.000 /usr/lib/python3.13/concurrent/futures/_base.py:337(_invoke_callbacks)
+       59    0.000    0.000    0.001    0.000 {method 'sub' of 're.Pattern' objects}
+     1119    0.000    0.000    0.001    0.000 /usr/lib/python3.13/asyncio/events.py:36(__init__)
+      516    0.000    0.000    0.001    0.000 /usr/lib/python3.13/asyncio/taskgroups.py:228(_on_task_done)
+       62    0.001    0.000    0.001    0.000 /usr/lib/python3.13/socket.py:221(__init__)
+     1054    0.000    0.000    0.001    0.000 /usr/lib/python3.13/threading.py:306(__exit__)
+       38    0.000    0.000    0.001    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/connection.py:132(__init__)
+       38    0.000    0.000    0.001    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/connectionpool.py:294(_put_conn)
+       21    0.000    0.000    0.001    0.000 /usr/lib/python3.13/asyncio/futures.py:391(_call_set_state)
+       24    0.001    0.000    0.001    0.000 {built-in method today}
+       38    0.000    0.000    0.001    0.000 /usr/lib/python3.13/email/feedparser.py:139(__init__)
+       61    0.000    0.000    0.001    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/utils.py:774(get_proxy)
+       38    0.000    0.000    0.001    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/adapters.py:396(build_connection_pool_key_attributes)
+      637    0.000    0.000    0.001    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/structures.py:51(__getitem__)
+      850    0.000    0.000    0.001    0.000 /usr/lib/python3.13/threading.py:318(_is_owned)
+       21    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/utils.py:900(default_headers)
+      121    0.000    0.000    0.000    0.000 /usr/lib/python3.13/http/cookiejar.py:1261(__init__)
+       38    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/adapters.py:90(_urllib3_request_context)
+     1542    0.000    0.000    0.000    0.000 {built-in method builtins.hasattr}
+       24    0.000    0.000    0.000    0.000 /usr/lib/python3.13/ssl.py:1225(send)
+       21    0.000    0.000    0.000    0.000 /usr/lib/python3.13/asyncio/futures.py:406(wrap_future)
+      833    0.000    0.000    0.000    0.000 /usr/lib/python3.13/email/utils.py:47(_has_surrogates)
+       24    0.000    0.000    0.000    0.000 /usr/lib/python3.13/ssl.py:441(_encode_hostname)
+       24    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/connection.py:566(__init__)
+       75    0.000    0.000    0.000    0.000 /usr/lib/python3.13/http/client.py:430(close)
+       41    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/utils.py:660(requote_uri)
+       21    0.000    0.000    0.000    0.000 /usr/lib/python3.13/asyncio/selector_events.py:129(_read_from_self)
+       24    0.000    0.000    0.000    0.000 {method 'write' of '_ssl._SSLSocket' objects}
+       38    0.000    0.000    0.000    0.000 /usr/lib/python3.13/email/message.py:243(get_payload)
+      358    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/util/url.py:330(_idna_encode)
+       21    0.000    0.000    0.000    0.000 /usr/lib/python3.13/asyncio/base_events.py:876(call_soon_threadsafe)
+       85    0.000    0.000    0.000    0.000 /usr/lib/python3.13/html/__init__.py:91(_replace_charref)
+       13    0.000    0.000    0.000    0.000 {method 'splitlines' of 'str' objects}
+      115    0.000    0.000    0.000    0.000 /usr/lib/python3.13/contextlib.py:303(helper)
+      471    0.000    0.000    0.000    0.000 <frozen os>:793(encode)
+       42    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/adapters.py:240(init_poolmanager)
+      396    0.000    0.000    0.000    0.000 {built-in method builtins.any}
+       21    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/sessions.py:454(__exit__)
+      152    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/util/timeout.py:109(__init__)
+      519    0.000    0.000    0.000    0.000 /usr/lib/python3.13/random.py:245(_randbelow_with_getrandbits)
+       48    0.000    0.000    0.000    0.000 /usr/lib/python3.13/ssl.py:669(verify_mode)
+       10    0.000    0.000    0.000    0.000 /usr/lib/python3.13/urllib/robotparser.py:268(allowance)
+       35    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/response.py:807(_fp_read)
+      137    0.000    0.000    0.000    0.000 /usr/lib/python3.13/threading.py:281(__init__)
+      190    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/connection.py:404(<genexpr>)
+       21    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/sessions.py:794(close)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.13/re/_compiler.py:743(compile)
+       76    0.000    0.000    0.000    0.000 /usr/lib/python3.13/typing.py:1374(__instancecheck__)
+       38    0.000    0.000    0.000    0.000 /usr/lib/python3.13/queue.py:46(__init__)
+      571    0.000    0.000    0.000    0.000 /usr/lib/python3.13/email/message.py:515(set_raw)
+      955    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/filter.py:292(matches_string)
+       44    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/response.py:450(_init_decoder)
+       76    0.000    0.000    0.000    0.000 {method 'readlines' of '_io._IOBase' objects}
+       35    0.000    0.000    0.000    0.000 /usr/lib/python3.13/http/client.py:463(read)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.13/concurrent/futures/__init__.py:41(__getattr__)
+       42    0.000    0.000    0.000    0.000 {method 'recv' of '_socket.socket' objects}
+        8    0.000    0.000    0.000    0.000 /usr/lib/python3.13/html/parser.py:256(parse_html_declaration)
+       38    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/models.py:85(path_url)
+       38    0.000    0.000    0.000    0.000 /usr/lib/python3.13/http/client.py:867(__init__)
+      518    0.000    0.000    0.000    0.000 /usr/lib/python3.13/_weakrefset.py:85(add)
+     1929    0.000    0.000    0.000    0.000 {method 'items' of 'dict' objects}
+       76    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/connectionpool.py:346(_get_timeout)
+       21    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/models.py:588(prepare_auth)
+      384    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/util/util.py:19(to_str)
+       14    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/connectionpool.py:236(_new_conn)
+      863    0.000    0.000    0.000    0.000 /usr/lib/python3.13/queue.py:306(_qsize)
+       24    0.000    0.000    0.000    0.000 /usr/lib/python3.13/ssl.py:504(set_alpn_protocols)
+       55    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/sessions.py:107(get_redirect_target)
+      192    0.000    0.000    0.000    0.000 /usr/lib/python3.13/urllib/robotparser.py:255(applies_to)
+       42    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/poolmanager.py:199(__init__)
+     1787    0.000    0.000    0.000    0.000 {method 'popleft' of 'collections.deque' objects}
+     1038    0.000    0.000    0.000    0.000 /usr/lib/python3.13/asyncio/queues.py:101(qsize)
+        8    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/builder/_htmlparser.py:294(handle_decl)
+       42    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/adapters.py:536(close)
+       21    0.000    0.000    0.000    0.000 /usr/lib/python3.13/asyncio/futures.py:362(_chain_future)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:1240(_find_spec)
+       36    0.000    0.000    0.000    0.000 {method 'set_result' of '_asyncio.Future' objects}
+       84    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/utils.py:1034(check_header_validity)
+       38    0.000    0.000    0.000    0.000 /usr/lib/python3.13/http/client.py:425(_close_conn)
+       38    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/utils.py:539(get_encoding_from_headers)
+      897    0.000    0.000    0.000    0.000 {method 'replace' of 'str' objects}
+       76    0.000    0.000    0.000    0.000 /usr/lib/python3.13/typing.py:1665(__subclasscheck__)
+      378    0.000    0.000    0.000    0.000 /usr/lib/python3.13/enum.py:1152(__new__)
+      148    0.000    0.000    0.000    0.000 {method 'settimeout' of '_socket.socket' objects}
+       38    0.000    0.000    0.000    0.000 /usr/lib/python3.13/http/client.py:396(_check_close)
+       21    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/utils.py:1018(get_auth_from_url)
+       24    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/util/ssl_.py:464(is_ipaddress)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1551(find_spec)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1522(_get_spec)
+       20    0.000    0.000    0.000    0.000 {method 'get' of '_queue.SimpleQueue' objects}
+       38    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/response.py:685(_init_length)
+        8    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/__init__.py:666(reset)
+       76    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/util/timeout.py:188(clone)
+        3    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1624(find_spec)
+      162    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/connection.py:163(host)
+      877    0.000    0.000    0.000    0.000 {method 'rstrip' of 'str' objects}
+       42    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/util/retry.py:202(__init__)
+       62    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/cookies.py:542(merge_cookies)
+       24    0.000    0.000    0.000    0.000 /usr/lib/python3.13/socket.py:517(family)
+      519    0.000    0.000    0.000    0.000 /usr/lib/python3.13/asyncio/queues.py:291(_put)
+       38    0.000    0.000    0.000    0.000 {method 'close' of '_io.BufferedReader' objects}
+        8    0.000    0.000    0.000    0.000 /usr/lib/python3.13/typing.py:2104(__instancecheck__)
+       14    0.000    0.000    0.000    0.000 /usr/lib/python3.13/asyncio/tasks.py:703(sleep)
+       59    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/util/url.py:263(_remove_path_dot_segments)
+       14    0.000    0.000    0.000    0.000 {method 'sendall' of '_socket.socket' objects}
+      554    0.000    0.000    0.000    0.000 /usr/lib/python3.13/urllib/robotparser.py:228(applies_to)
+      260    0.000    0.000    0.000    0.000 {method '_checkReadable' of '_io._IOBase' objects}
+   114/84    0.000    0.000    0.000    0.000 <frozen abc>:121(__subclasscheck__)
+      453    0.000    0.000    0.000    0.000 {built-in method builtins.getattr}
+  856/855    0.000    0.000    0.000    0.000 {method 'acquire' of '_thread.lock' objects}
+      203    0.000    0.000    0.000    0.000 /usr/lib/python3.13/http/cookiejar.py:1227(deepvalues)
+       42    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/poolmanager.py:267(clear)
+      139    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/structures.py:57(__iter__)
+      148    0.000    0.000    0.000    0.000 /usr/lib/python3.13/email/message.py:29(_splitparam)
+     1388    0.000    0.000    0.000    0.000 {method 'partition' of 'str' objects}
+      685    0.000    0.000    0.000    0.000 {method 'setdefault' of 'dict' objects}
+       21    0.000    0.000    0.000    0.000 /usr/lib/python3.13/asyncio/selector_events.py:141(_write_to_self)
+      168    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/utils.py:1045(_validate_header_part)
+      516    0.000    0.000    0.000    0.000 /usr/lib/python3.13/_weakrefset.py:39(_remove)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1093(get_code)
+       21    0.000    0.000    0.000    0.000 /usr/lib/python3.13/concurrent/futures/_base.py:328(__init__)
+      367    0.000    0.000    0.000    0.000 /usr/lib/python3.13/enum.py:199(__get__)
+       21    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/models.py:106(_encode_params)
+       20    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/cookies.py:440(_copy_cookie_jar)
+      418    0.000    0.000    0.000    0.000 /usr/lib/python3.13/queue.py:309(_put)
+      408    0.000    0.000    0.000    0.000 /usr/lib/python3.13/queue.py:312(_get)
+      115    0.000    0.000    0.000    0.000 /usr/lib/python3.13/contextlib.py:108(__init__)
+       38    0.000    0.000    0.000    0.000 /usr/lib/python3.13/socket.py:694(__init__)
+      115    0.000    0.000    0.000    0.000 /usr/lib/python3.13/contextlib.py:136(__enter__)
+       59    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/util/url.py:100(__new__)
+       17    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:131(_path_join)
+   114/84    0.000    0.000    0.000    0.000 {built-in method _abc._abc_subclasscheck}
+     2244    0.000    0.000    0.000    0.000 {built-in method builtins.ord}
+       82    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/cookies.py:358(update)
+      184    0.000    0.000    0.000    0.000 /usr/lib/python3.13/threading.py:122(RLock)
+      740    0.000    0.000    0.000    0.000 {method 'lstrip' of 'str' objects}
+      695    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/structures.py:58(<genexpr>)
+      456    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/util/timeout.py:130(_validate_timeout)
+       21    0.000    0.000    0.000    0.000 {method 'send' of '_socket.socket' objects}
+      907    0.000    0.000    0.000    0.000 {method '__enter__' of '_thread.lock' objects}
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.13/re/_compiler.py:576(_code)
+       42    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/_collections.py:141(clear)
+       38    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/util/request.py:191(body_to_chunks)
+       20    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/cookies.py:428(copy)
+       38    0.000    0.000    0.000    0.000 /usr/lib/python3.13/socket.py:782(close)
+     1174    0.000    0.000    0.000    0.000 {method 'append' of 'collections.deque' objects}
+       76    0.000    0.000    0.000    0.000 {built-in method builtins.issubclass}
+       38    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/util/timeout.py:172(from_float)
+       38    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/util/connection.py:93(_set_socket_options)
+     1043    0.000    0.000    0.000    0.000 {method 'add' of 'set' objects}
+       38    0.000    0.000    0.000    0.000 /usr/lib/python3.13/email/feedparser.py:54(__init__)
+       55    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/models.py:769(is_redirect)
+       10    0.000    0.000    0.000    0.000 /usr/lib/python3.13/urllib/robotparser.py:185(crawl_delay)
+       24    0.000    0.000    0.000    0.000 /usr/lib/python3.13/ssl.py:677(verify_mode)
+       20    0.000    0.000    0.000    0.000 /usr/lib/python3.13/urllib/parse.py:338(geturl)
+       38    0.000    0.000    0.000    0.000 /usr/lib/python3.13/email/feedparser.py:71(close)
+      601    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/_collections.py:289(__iter__)
+      164    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/element.py:2173(get_attribute_list)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.13/re/_parser.py:970(parse)
+       38    0.000    0.000    0.000    0.000 /usr/lib/python3.13/weakref.py:568(__init__)
+       13    0.000    0.000    0.000    0.000 /usr/lib/python3.13/urllib/robotparser.py:29(__init__)
+       49    0.000    0.000    0.000    0.000 /usr/lib/python3.13/asyncio/locks.py:13(__aenter__)
+       21    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/response.py:210(_get_decoder)
+      930    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/element.py:2203(__getitem__)
+      113    0.000    0.000    0.000    0.000 {function SocketIO.close at 0x7df93ae2fd80}
+       21    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/models.py:630(prepare_hooks)
+      190    0.000    0.000    0.000    0.000 {method 'fullmatch' of 're.Pattern' objects}
+       21    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/models.py:494(prepare_body)
+      526    0.000    0.000    0.000    0.000 {built-in method _heapq.heappush}
+     1657    0.000    0.000    0.000    0.000 /usr/lib/python3.13/asyncio/base_events.py:554(_check_closed)
+       21    0.000    0.000    0.000    0.000 /usr/lib/python3.13/concurrent/futures/thread.py:184(_adjust_thread_count)
+       41    0.000    0.000    0.000    0.000 /usr/lib/python3.13/http/cookiejar.py:1734(clear_expired_cookies)
+      228    0.000    0.000    0.000    0.000 /usr/lib/python3.13/http/client.py:1066(_output)
+       64    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/filter.py:224(__init__)
+       76    0.000    0.000    0.000    0.000 /usr/lib/python3.13/email/feedparser.py:123(pushlines)
+       13    0.000    0.000    0.000    0.000 /usr/lib/python3.13/urllib/robotparser.py:55(set_url)
+       38    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/_collections.py:100(__setitem__)
+        8    0.000    0.000    0.000    0.000 /usr/lib/python3.13/inspect.py:1816(getattr_static)
+      518    0.000    0.000    0.000    0.000 {method 'rpartition' of 'str' objects}
+     1679    0.000    0.000    0.000    0.000 /usr/lib/python3.13/asyncio/base_events.py:2058(get_debug)
+       22    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/response.py:256(get)
+        8    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+       38    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/util/retry.py:387(is_retry)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.13/re/_parser.py:451(_parse_sub)
+       80    0.000    0.000    0.000    0.000 <frozen _collections_abc>:945(pop)
+     1557    0.000    0.000    0.000    0.000 {built-in method _operator.index}
+      101    0.000    0.000    0.000    0.000 <frozen _collections_abc>:827(items)
+       21    0.000    0.000    0.000    0.000 /usr/lib/python3.13/concurrent/futures/_base.py:497(set_running_or_notify_cancel)
+     1032    0.000    0.000    0.000    0.000 {method 'discard' of 'set' objects}
+      380    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/connection.py:357(<genexpr>)
+       24    0.000    0.000    0.000    0.000 {method 'getpeername' of '_socket.socket' objects}
+       21    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/models.py:207(register_hook)
+       76    0.000    0.000    0.000    0.000 /usr/lib/python3.13/logging/__init__.py:1497(debug)
+       38    0.000    0.000    0.000    0.000 {method 'write' of '_io.StringIO' objects}
+       38    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/sessions.py:781(get_adapter)
+      126    0.000    0.000    0.000    0.000 /usr/lib/python3.13/asyncio/base_futures.py:13(isfuture)
+      949    0.000    0.000    0.000    0.000 {method '__exit__' of '_thread.lock' objects}
+       38    0.000    0.000    0.000    0.000 /usr/lib/python3.13/email/feedparser.py:197(_new_message)
+      627    0.000    0.000    0.000    0.000 {method 'pop' of 'dict' objects}
+       42    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/_collections.py:82(__init__)
+      298    0.000    0.000    0.000    0.000 /usr/lib/python3.13/socket.py:744(readable)
+       49    0.000    0.000    0.000    0.000 /usr/lib/python3.13/asyncio/locks.py:19(__aexit__)
+      437    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/element.py:657(_last_descendant)
+       21    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/response.py:118(__init__)
+       41    0.000    0.000    0.000    0.000 /usr/lib/python3.13/http/cookiejar.py:1297(_cookie_attrs)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.13/re/_parser.py:511(_parse)
+      6/2    0.000    0.000    0.000    0.000 /usr/lib/python3.13/re/_compiler.py:37(_compile)
+       82    0.000    0.000    0.000    0.000 /usr/lib/python3.13/asyncio/selector_events.py:740(_process_events)
+       96    0.000    0.000    0.000    0.000 /usr/lib/python3.13/asyncio/base_events.py:772(time)
+       33    0.000    0.000    0.000    0.000 /usr/lib/python3.13/urllib/parse.py:413(_splitnetloc)
+        4    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:480(_call_with_frames_removed)
+       41    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/utils.py:636(unquote_unreserved)
+       37    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/utils.py:514(_parse_content_type_header)
+       38    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/util/timeout.py:245(read_timeout)
+        2    0.000    0.000    0.000    0.000 {built-in method builtins.exec}
+        3    0.000    0.000    0.000    0.000 /usr/lib/python3.13/typing.py:1634(__getitem__)
+      195    0.000    0.000    0.000    0.000 {method 'acquire' of '_thread.RLock' objects}
+      312    0.000    0.000    0.000    0.000 {built-in method time.time}
+      191    0.000    0.000    0.000    0.000 {method 'split' of 'bytes' objects}
+        8    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/builder/_htmlparser.py:84(__init__)
+       38    0.000    0.000    0.000    0.000 {method 'setsockopt' of '_socket.socket' objects}
+       22    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/response.py:499(_flush_decoder)
+        7    0.000    0.000    0.000    0.000 /usr/lib/python3.13/asyncio/futures.py:310(_set_result_unless_cancelled)
+       29    0.000    0.000    0.000    0.000 /usr/lib/python3.13/asyncio/locks.py:386(acquire)
+        7    0.000    0.000    0.000    0.000 /usr/lib/python3.13/asyncio/base_events.py:781(call_later)
+       97    0.000    0.000    0.000    0.000 {method 'subn' of 're.Pattern' objects}
+       21    0.000    0.000    0.000    0.000 /usr/lib/python3.13/concurrent/futures/_base.py:393(done)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:782(_compile_bytecode)
+      168    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/util/retry.py:242(<genexpr>)
+       38    0.000    0.000    0.000    0.000 /usr/lib/python3.13/http/client.py:949(_wrap_ipv6)
+      516    0.000    0.000    0.000    0.000 {method 'add_done_callback' of '_asyncio.Task' objects}
+       38    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/_collections.py:93(__getitem__)
+       21    0.000    0.000    0.000    0.000 /usr/lib/python3.13/concurrent/futures/_base.py:408(add_done_callback)
+       21    0.000    0.000    0.000    0.000 /usr/lib/python3.13/threading.py:472(acquire)
+        1    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/main.py:56(_enqueue_seeds)
+      145    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/_internal_utils.py:25(to_native_string)
+        2    0.000    0.000    0.000    0.000 {built-in method marshal.loads}
+      260    0.000    0.000    0.000    0.000 {method '_checkClosed' of '_io._IOBase' objects}
+       41    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:645(parent)
+       37    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/response.py:1092(closed)
+       83    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/hooks.py:15(default_hooks)
+       42    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/sessions.py:799(mount)
+      203    0.000    0.000    0.000    0.000 /usr/lib/python3.13/http/cookiejar.py:1753(__iter__)
+       21    0.000    0.000    0.000    0.000 /usr/lib/python3.13/threading.py:519(release)
+       24    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/util/ssl_.py:180(resolve_cert_reqs)
+       38    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/models.py:799(iter_content)
+      260    0.000    0.000    0.000    0.000 {method 'values' of 'collections.OrderedDict' objects}
+      114    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/util/timeout.py:126(resolve_default_timeout)
+        4    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1214(get_data)
+        6    0.000    0.000    0.000    0.000 {built-in method builtins.__build_class__}
+       38    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/poolmanager.py:374(_merge_pool_kwargs)
+      149    0.000    0.000    0.000    0.000 /usr/lib/python3.13/urllib/robotparser.py:74(_add_entry)
+       24    0.000    0.000    0.000    0.000 /usr/lib/python3.13/socket.py:523(type)
+       76    0.000    0.000    0.000    0.000 {method 'read' of '_io.StringIO' objects}
+       29    0.000    0.000    0.000    0.000 /usr/lib/python3.13/asyncio/locks.py:380(locked)
+       76    0.000    0.000    0.000    0.000 {method 'extend' of 'collections.deque' objects}
+       24    0.000    0.000    0.000    0.000 {method 'getsockopt' of '_socket.socket' objects}
+       38    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/util/retry.py:379(_is_method_retryable)
+        8    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/builder/__init__.py:108(lookup)
+       38    0.000    0.000    0.000    0.000 /usr/lib/python3.13/http/client.py:442(flush)
+        7    0.000    0.000    0.000    0.000 /usr/lib/python3.13/asyncio/base_events.py:805(call_at)
+       41    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/models.py:334(__init__)
+      219    0.000    0.000    0.000    0.000 {method 'upper' of 'str' objects}
+      294    0.000    0.000    0.000    0.000 {method '__exit__' of 'memoryview' objects}
+       38    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/adapters.py:304(cert_verify)
+      283    0.000    0.000    0.000    0.000 {method 'values' of 'dict' objects}
+       21    0.000    0.000    0.000    0.000 {built-in method zlib.decompressobj}
+      147    0.000    0.000    0.000    0.000 {method '__enter__' of '_thread.RLock' objects}
+      516    0.000    0.000    0.000    0.000 {method 'exception' of '_asyncio.Task' objects}
+        3    0.000    0.000    0.000    0.000 /usr/lib/python3.13/typing.py:1658(copy_with)
+        8    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/builder/_htmlparser.py:347(__init__)
+      519    0.000    0.000    0.000    0.000 {method 'bit_length' of 'int' objects}
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.13/concurrent/futures/thread.py:1(<module>)
+      530    0.000    0.000    0.000    0.000 {method 'getrandbits' of '_random.Random' objects}
+      367    0.000    0.000    0.000    0.000 /usr/lib/python3.13/enum.py:1333(value)
+       36    0.000    0.000    0.000    0.000 /usr/lib/python3.13/asyncio/base_events.py:457(create_future)
+       38    0.000    0.000    0.000    0.000 /usr/lib/python3.13/urllib/parse.py:175(port)
+      428    0.000    0.000    0.000    0.000 {method 'isascii' of 'str' objects}
+       21    0.000    0.000    0.000    0.000 {method 'put' of '_queue.SimpleQueue' objects}
+       21    0.000    0.000    0.000    0.000 /usr/lib/python3.13/concurrent/futures/_base.py:428(result)
+        3    0.000    0.000    0.000    0.000 /usr/lib/python3.13/typing.py:1423(__init__)
+       21    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/models.py:258(__init__)
+        8    0.000    0.000    0.000    0.000 /usr/lib/python3.13/html/parser.py:86(__init__)
+       38    0.000    0.000    0.000    0.000 /usr/lib/python3.13/http/client.py:1265(_encode_request)
+       76    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/response.py:404(retries)
+      272    0.000    0.000    0.000    0.000 {method '__exit__' of '_thread.RLock' objects}
+       10    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/frontier/frontier.py:18(get)
+      540    0.000    0.000    0.000    0.000 /usr/lib/python3.13/ssl.py:1117(_checkClosed)
+      516    0.000    0.000    0.000    0.000 {method 'cancelled' of '_asyncio.Task' objects}
+        7    0.000    0.000    0.000    0.000 /usr/lib/python3.13/asyncio/events.py:157(cancel)
+       24    0.000    0.000    0.000    0.000 {method '_set_alpn_protocols' of '_ssl._SSLContext' objects}
+       38    0.000    0.000    0.000    0.000 /usr/lib/python3.13/http/client.py:1286(_validate_host)
+       76    0.000    0.000    0.000    0.000 {method 'pop' of 'collections.OrderedDict' objects}
+       21    0.000    0.000    0.000    0.000 /usr/lib/python3.13/urllib/parse.py:156(username)
+       76    0.000    0.000    0.000    0.000 /usr/lib/python3.13/email/message.py:211(is_multipart)
+       21    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/models.py:393(prepare_method)
+      195    0.000    0.000    0.000    0.000 {method 'release' of '_thread.RLock' objects}
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.13/re/_compiler.py:514(_compile_info)
+       22    0.000    0.000    0.000    0.000 /usr/lib/python3.13/threading.py:428(notify_all)
+      529    0.000    0.000    0.000    0.000 /usr/lib/python3.13/asyncio/queues.py:71(_wakeup_next)
+       28    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/builder/_htmlparser.py:266(handle_entityref)
+       38    0.000    0.000    0.000    0.000 /usr/lib/python3.13/email/feedparser.py:210(_pop_message)
+      136    0.000    0.000    0.000    0.000 {built-in method time.monotonic}
+       38    0.000    0.000    0.000    0.000 /usr/lib/python3.13/email/message.py:335(set_payload)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:416(__enter__)
+       21    0.000    0.000    0.000    0.000 /usr/lib/python3.13/concurrent/futures/_base.py:383(cancelled)
+       16    0.000    0.000    0.000    0.000 /usr/lib/python3.13/asyncio/taskgroups.py:68(__aexit__)
+       82    0.000    0.000    0.000    0.000 <frozen posixpath>:42(_get_sep)
+      121    0.000    0.000    0.000    0.000 /usr/lib/python3.13/http/cookiejar.py:884(__init__)
+      367    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/element.py:2272(__eq__)
+       38    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/hooks.py:22(dispatch_hook)
+       41    0.000    0.000    0.000    0.000 /usr/lib/python3.13/http/cookiejar.py:1290(_cookies_for_request)
+       76    0.000    0.000    0.000    0.000 {built-in method sys.audit}
+       21    0.000    0.000    0.000    0.000 /usr/lib/python3.13/concurrent/futures/_base.py:463(exception)
+       38    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/response.py:245(__init__)
+       10    0.000    0.000    0.000    0.000 /usr/lib/python3.13/asyncio/queues.py:172(get)
+       76    0.000    0.000    0.000    0.000 /usr/lib/python3.13/email/message.py:150(__init__)
+       38    0.000    0.000    0.000    0.000 /usr/lib/python3.13/http/client.py:1269(_validate_method)
+       41    0.000    0.000    0.000    0.000 {method 'sort' of 'list' objects}
+      118    0.000    0.000    0.000    0.000 {method 'copy' of 'dict' objects}
+      519    0.000    0.000    0.000    0.000 /usr/lib/python3.13/asyncio/locks.py:194(clear)
+       42    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/adapters.py:140(__init__)
+       97    0.000    0.000    0.000    0.000 {method 'decode' of 'bytearray' objects}
+       40    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/element.py:2869(__init__)
+       76    0.000    0.000    0.000    0.000 /usr/lib/python3.13/logging/__init__.py:1764(isEnabledFor)
+       21    0.000    0.000    0.000    0.000 <frozen _collections_abc>:853(__len__)
+        1    0.000    0.000    0.000    0.000 {built-in method _thread.start_joinable_thread}
+       63    0.000    0.000    0.000    0.000 {method 'extend' of 'list' objects}
+       24    0.000    0.000    0.000    0.000 /usr/lib/python3.13/socket.py:507(detach)
+       21    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/response.py:143(flush)
+      123    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/utils.py:211(<genexpr>)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.13/encodings/__init__.py:71(search_function)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.13/typing.py:2078(__subclasscheck__)
+       21    0.000    0.000    0.000    0.000 /usr/lib/python3.13/urllib/parse.py:978(urlencode)
+       43    0.000    0.000    0.000    0.000 /usr/lib/python3.13/urllib/parse.py:869(__missing__)
+      152    0.000    0.000    0.000    0.000 {method 'seek' of '_io.StringIO' objects}
+       32    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/response.py:252(put)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:806(module_from_spec)
+       24    0.000    0.000    0.000    0.000 /usr/lib/python3.13/inspect.py:1803(_shadowed_dict)
+        8    0.000    0.000    0.000    0.000 /usr/lib/python3.13/inspect.py:1768(_check_instance)
+        8    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/element.py:326(__new__)
+       21    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/models.py:997(raise_for_status)
+        4    0.000    0.000    0.000    0.000 {built-in method _io.open_code}
+        7    0.000    0.000    0.000    0.000 /usr/lib/python3.13/asyncio/events.py:113(__init__)
+       44    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/util/response.py:9(is_fp_closed)
+      118    0.000    0.000    0.000    0.000 {method 'groups' of 're.Match' objects}
+       38    0.000    0.000    0.000    0.000 /usr/lib/python3.13/http/client.py:1278(_validate_path)
+       13    0.000    0.000    0.000    0.000 /usr/lib/python3.13/urllib/robotparser.py:47(modified)
+       29    0.000    0.000    0.000    0.000 /usr/lib/python3.13/asyncio/locks.py:428(release)
+        8    0.000    0.000    0.000    0.000 /usr/lib/python3.13/collections/__init__.py:599(__init__)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:304(acquire)
+      107    0.000    0.000    0.000    0.000 {method 'remove' of 'list' objects}
+      152    0.000    0.000    0.000    0.000 /usr/lib/python3.13/urllib/robotparser.py:237(__init__)
+       57    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/response.py:344(<genexpr>)
+      280    0.000    0.000    0.000    0.000 /usr/lib/python3.13/collections/__init__.py:613(__missing__)
+       38    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/util/timeout.py:202(start_connect)
+       49    0.000    0.000    0.000    0.000 {built-in method _contextvars.copy_context}
+       16    0.000    0.000    0.000    0.000 /usr/lib/python3.13/asyncio/taskgroups.py:82(_aexit)
+      148    0.000    0.000    0.000    0.000 /usr/lib/python3.13/urllib/parse.py:421(_checknetloc)
+       97    0.000    0.000    0.000    0.000 {method 'count' of 'bytes' objects}
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:733(_init_module_attrs)
+       42    0.000    0.000    0.000    0.000 {method 'clear' of 'collections.OrderedDict' objects}
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.13/netrc.py:1(<module>)
+       10    0.000    0.000    0.000    0.000 /usr/lib/python3.13/asyncio/queues.py:203(get_nowait)
+        8    0.000    0.000    0.000    0.000 /usr/lib/python3.13/inspect.py:1777(_check_class)
+      135    0.000    0.000    0.000    0.000 /usr/lib/python3.13/http/client.py:453(isclosed)
+       18    0.000    0.000    0.000    0.000 /usr/lib/python3.13/typing.py:1368(__setattr__)
+       38    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/util/request.py:136(set_file_position)
+      154    0.000    0.000    0.000    0.000 /usr/lib/python3.13/http/cookiejar.py:44(_debug)
+       21    0.000    0.000    0.000    0.000 /usr/lib/python3.13/urllib/parse.py:193(_userinfo)
+       80    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/_request_methods.py:51(__init__)
+       38    0.000    0.000    0.000    0.000 /usr/lib/python3.13/socket.py:491(_decref_socketios)
+        8    0.000    0.000    0.000    0.000 /usr/lib/python3.13/asyncio/taskgroups.py:54(__aenter__)
+      166    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/builder/__init__.py:680(<genexpr>)
+       20    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/models.py:1026(close)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.13/concurrent/futures/thread.py:127(__init__)
+        4    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:513(cache_from_source)
+       21    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/sessions.py:91(merge_hooks)
+       72    0.000    0.000    0.000    0.000 {method 'gettimeout' of '_socket.socket' objects}
+        7    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:145(_path_stat)
+       21    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/_internal_utils.py:38(unicode_is_ascii)
+        3    0.000    0.000    0.000    0.000 /usr/lib/python3.13/typing.py:1307(__init__)
+       76    0.000    0.000    0.000    0.000 {method 'truncate' of '_io.StringIO' objects}
+       24    0.000    0.000    0.000    0.000 {method 'append' of 'bytearray' objects}
+      226    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/cookies.py:117(info)
+      101    0.000    0.000    0.000    0.000 {method 'items' of 'collections.OrderedDict' objects}
+       88    0.000    0.000    0.000    0.000 {built-in method posix.fspath}
+       21    0.000    0.000    0.000    0.000 {method 'flush' of 'zlib.Decompress' objects}
+       22    0.000    0.000    0.000    0.000 {method 'get_nowait' of '_queue.SimpleQueue' objects}
+      122    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/utils.py:743(set_environ)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.13/threading.py:953(start)
+       20    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/sessions.py:333(rebuild_method)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.13/threading.py:641(wait)
+       70    0.000    0.000    0.000    0.000 {method 'cancelled' of '_asyncio.Future' objects}
+        4    0.000    0.000    0.000    0.000 /usr/lib/python3.13/re/_compiler.py:241(_optimize_charset)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.13/enum.py:1603(__and__)
+        1    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/main.py:159(main)
+       21    0.000    0.000    0.000    0.000 /usr/lib/python3.13/asyncio/futures.py:298(_get_loop)
+       38    0.000    0.000    0.000    0.000 {built-in method _socket.getdefaulttimeout}
+       24    0.000    0.000    0.000    0.000 {method 'cast' of 'memoryview' objects}
+       21    0.000    0.000    0.000    0.000 /usr/lib/python3.13/asyncio/base_events.py:1945(_add_callback)
+        4    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:632(cached)
+       29    0.000    0.000    0.000    0.000 {method 'update' of 'dict' objects}
+       20    0.000    0.000    0.000    0.000 /usr/lib/python3.13/asyncio/locks.py:127(release)
+        8    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/builder/__init__.py:204(__init__)
+       38    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/response.py:1124(supports_chunked_reads)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.13/html/parser.py:277(parse_bogus_comment)
+       17    0.000    0.000    0.000    0.000 {built-in method _heapq.heappop}
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:642(_get_cached)
+       24    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/connection.py:306(proxy_is_forwarding)
+       42    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/structures.py:60(__len__)
+        8    0.000    0.000    0.000    0.000 /usr/lib/python3.13/html/parser.py:96(reset)
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.13/threading.py:327(wait)
+       38    0.000    0.000    0.000    0.000 /usr/lib/python3.13/email/parser.py:17(__init__)
+       49    0.000    0.000    0.000    0.000 /usr/lib/python3.13/re/_parser.py:167(__getitem__)
+       38    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/util/connection.py:103(allowed_gai_family)
+        1    0.000    0.000    0.000    0.000 {built-in method _io.open}
+      101    0.000    0.000    0.000    0.000 <frozen _collections_abc>:850(__init__)
+       24    0.000    0.000    0.000    0.000 {method 'extend' of 'bytearray' objects}
+       46    0.000    0.000    0.000    0.000 {built-in method builtins.min}
+       38    0.000    0.000    0.000    0.000 {method 'write' of '_io.BytesIO' objects}
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.13/asyncio/tasks.py:402(create_task)
+      113    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/cookies.py:110(__init__)
+       21    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/utils.py:891(default_user_agent)
+       19    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/util/response.py:91(is_response_to_head)
+       33    0.000    0.000    0.000    0.000 {method 'isalpha' of 'str' objects}
+        4    0.000    0.000    0.000    0.000 {method 'readline' of '_io.TextIOWrapper' objects}
+       21    0.000    0.000    0.000    0.000 /usr/lib/python3.13/asyncio/unix_events.py:83(_process_self_data)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.13/threading.py:869(__init__)
+        6    0.000    0.000    0.000    0.000 /usr/lib/python3.13/typing.py:1639(<genexpr>)
+        3    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/domain_utils.py:12(__init__)
+       21    0.000    0.000    0.000    0.000 /usr/lib/python3.13/asyncio/futures.py:384(_call_check_cancel)
+       42    0.000    0.000    0.000    0.000 {method 'update' of 'collections.OrderedDict' objects}
+       38    0.000    0.000    0.000    0.000 /usr/lib/python3.13/http/client.py:926(_get_hostport)
+      114    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/util/timeout.py:227(connect_timeout)
+       10    0.000    0.000    0.000    0.000 /usr/lib/python3.13/asyncio/queues.py:294(_get)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:162(__enter__)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.13/typing.py:2138(_proto_hook)
+       25    0.000    0.000    0.000    0.000 /usr/lib/python3.13/re/_parser.py:260(get)
+      6/2    0.000    0.000    0.000    0.000 /usr/lib/python3.13/re/_parser.py:177(getwidth)
+       24    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/connection.py:313(proxy_is_tunneling)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.13/typing.py:1984(_allow_reckless_class_checks)
+        8    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/element.py:200(__new__)
+       37    0.000    0.000    0.000    0.000 {built-in method _asyncio.get_running_loop}
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1619(_get_spec)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.13/threading.py:620(set)
+       62    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/connection.py:292(is_closed)
+       21    0.000    0.000    0.000    0.000 {built-in method builtins.all}
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.13/re/_compiler.py:439(_get_literal_prefix)
+       21    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/models.py:572(prepare_content_length)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.13/typing.py:1973(_caller)
+       18    0.000    0.000    0.000    0.000 /usr/lib/python3.13/typing.py:1294(_is_dunder)
+        8    0.000    0.000    0.000    0.000 /usr/lib/python3.13/asyncio/taskgroups.py:28(__init__)
+        5    0.000    0.000    0.000    0.000 {method '__exit__' of '_io._IOBase' objects}
+       38    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/connection.py:182(host)
+       16    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/element.py:1836(string)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.13/threading.py:461(__init__)
+        3    0.000    0.000    0.000    0.000 /usr/lib/python3.13/typing.py:173(_type_check)
+       88    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/response.py:249(__len__)
+       76    0.000    0.000    0.000    0.000 /usr/lib/python3.13/email/feedparser.py:126(__iter__)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:833(spec_from_file_location)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:124(setdefault)
+        4    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:137(_path_split)
+        7    0.000    0.000    0.000    0.000 /usr/lib/python3.13/asyncio/events.py:73(cancel)
+       21    0.000    0.000    0.000    0.000 {method 'add_done_callback' of '_asyncio.Future' objects}
+        8    0.000    0.000    0.000    0.000 {method 'format' of 'str' objects}
+        8    0.000    0.000    0.000    0.000 /usr/lib/python3.13/html/parser.py:113(close)
+       40    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/filter.py:437(includes_everything)
+       27    0.000    0.000    0.000    0.000 /usr/lib/python3.13/re/_parser.py:239(__next)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.13/urllib/parse.py:947(_byte_quoter_factory)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.13/encodings/idna.py:378(getregentry)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:426(_get_module_lock)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:164(_path_isfile)
+        1    0.000    0.000    0.000    0.000 {built-in method sys._getframemodulename}
+       21    0.000    0.000    0.000    0.000 /usr/lib/python3.13/re/_parser.py:175(append)
+       19    0.000    0.000    0.000    0.000 {method 'pop' of 'set' objects}
+       29    0.000    0.000    0.000    0.000 /usr/lib/python3.13/asyncio/locks.py:437(_wake_up_next)
+        4    0.000    0.000    0.000    0.000 /usr/lib/python3.13/re/_compiler.py:214(_compile_charset)
+       10    0.000    0.000    0.000    0.000 {method 'isdigit' of 'str' objects}
+       38    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/util/proxy.py:11(connection_requires_http_tunnel)
+        6    0.000    0.000    0.000    0.000 /usr/lib/python3.13/enum.py:1585(_get_value)
+       38    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/adapters.py:578(add_headers)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:420(__exit__)
+       38    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/urllib3/connectionpool.py:337(_validate_conn)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:155(_path_is_mode_type)
+       20    0.000    0.000    0.000    0.000 {method 'copy' of 'collections.OrderedDict' objects}
+       20    0.000    0.000    0.000    0.000 /usr/lib/python3.13/http/cookiejar.py:1269(set_policy)
+        1    0.000    0.000    0.000    0.000 <frozen os>:1173(process_cpu_count)
+       22    0.000    0.000    0.000    0.000 {method 'getvalue' of '_io.BytesIO' objects}
+       21    0.000    0.000    0.000    0.000 /usr/lib/python3.13/concurrent/futures/thread.py:48(__init__)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.13/urllib/parse.py:862(__init__)
+       38    0.000    0.000    0.000    0.000 /usr/lib/python3.13/queue.py:303(_init)
+       21    0.000    0.000    0.000    0.000 {method '_is_owned' of '_thread.RLock' objects}
+        4    0.000    0.000    0.000    0.000 /usr/lib/python3.13/re/_compiler.py:401(_simple)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:697(_classify_pyc)
+       10    0.000    0.000    0.000    0.000 /usr/lib/python3.13/asyncio/queues.py:219(task_done)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1233(path_stats)
+       24    0.000    0.000    0.000    0.000 /usr/lib/python3.13/ssl.py:1121(_check_connected)
+        8    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/builder/_htmlparser.py:377(prepare_markup)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:372(release)
+       21    0.000    0.000    0.000    0.000 {method 'get_loop' of '_asyncio.Future' objects}
+       38    0.000    0.000    0.000    0.000 {function HTTPResponse.flush at 0x7df93a354e00}
+       19    0.000    0.000    0.000    0.000 {method 'flush' of '_io.BufferedReader' objects}
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.13/encodings/__init__.py:43(normalize_encoding)
+       24    0.000    0.000    0.000    0.000 {method 'fileno' of '_socket.socket' objects}
+       14    0.000    0.000    0.000    0.000 {method 'insert' of 'list' objects}
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.13/concurrent/futures/thread.py:122(ThreadPoolExecutor)
+        8    0.000    0.000    0.000    0.000 /usr/lib/python3.13/_markupbase.py:27(__init__)
+       16    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/element.py:2223(__setitem__)
+       21    0.000    0.000    0.000    0.000 /usr/lib/python3.13/concurrent/futures/_base.py:398(__get_result)
+       20    0.000    0.000    0.000    0.000 /usr/lib/python3.13/asyncio/locks.py:90(acquire)
+        4    0.000    0.000    0.000    0.000 {built-in method builtins.max}
+       36    0.000    0.000    0.000    0.000 <frozen _collections_abc>:439(__subclasshook__)
+       29    0.000    0.000    0.000    0.000 {method 'done' of '_asyncio.Future' objects}
+       21    0.000    0.000    0.000    0.000 /usr/lib/python3.13/asyncio/base_events.py:558(_check_default_executor)
+        1    0.000    0.000    0.000    0.000 {built-in method posix.sched_getaffinity}
+       24    0.000    0.000    0.000    0.000 {function socket.detach at 0x7df93ae2f060}
+        7    0.000    0.000    0.000    0.000 {built-in method math.ceil}
+       21    0.000    0.000    0.000    0.000 {built-in method _sre.unicode_iscased}
+       41    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/cookies.py:87(get_new_headers)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.13/concurrent/futures/thread.py:47(_WorkItem)
+       29    0.000    0.000    0.000    0.000 /usr/lib/python3.13/asyncio/locks.py:384(<genexpr>)
+        8    0.000    0.000    0.000    0.000 /usr/lib/python3.13/_markupbase.py:32(reset)
+       35    0.000    0.000    0.000    0.000 {built-in method builtins.chr}
+       20    0.000    0.000    0.000    0.000 /usr/lib/python3.13/asyncio/locks.py:144(_wake_up_first)
+        8    0.000    0.000    0.000    0.000 {built-in method _asyncio.current_task}
+       14    0.000    0.000    0.000    0.000 /usr/lib/python3.13/re/_parser.py:163(__len__)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.13/re/_parser.py:230(__init__)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:74(__new__)
+        2    0.000    0.000    0.000    0.000 {built-in method _sre.compile}
+        8    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/builder/__init__.py:791(_root_tag_encountered)
+       20    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/cookies.py:435(get_policy)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.13/re/_compiler.py:410(_generate_overlap_table)
+        1    0.000    0.000    0.000    0.000 <frozen _collections_abc>:292(__subclasshook__)
+        4    0.000    0.000    0.000    0.000 /usr/lib/python3.13/re/_parser.py:371(_escape)
+        2    0.000    0.000    0.000    0.000 <frozen codecs>:322(decode)
+        8    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/builder/__init__.py:765(_initialize_xml_detector)
+       21    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/models.py:216(<genexpr>)
+        8    0.000    0.000    0.000    0.000 /usr/lib/python3.13/collections/__init__.py:673(update)
+        2    0.000    0.000    0.000    0.000 <frozen _collections_abc>:108(_check_methods)
+        8    0.000    0.000    0.000    0.000 {method 'reverse' of 'list' objects}
+       21    0.000    0.000    0.000    0.000 /usr/lib/python3.13/asyncio/base_events.py:758(is_closed)
+        2    0.000    0.000    0.000    0.000 {built-in method _imp.source_hash}
+       16    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/__init__.py:311(deprecated_argument)
+       20    0.000    0.000    0.000    0.000 /usr/lib/python3.13/asyncio/queues.py:110(empty)
+        7    0.000    0.000    0.000    0.000 {built-in method math.isnan}
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:89(_unpack_uint32)
+        8    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:139(<genexpr>)
+       21    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/requests/sessions.py:451(__enter__)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.13/threading.py:1022(_set_native_id)
+       19    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:491(_verbose_message)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.13/threading.py:592(__init__)
+        6    0.000    0.000    0.000    0.000 /usr/lib/python3.13/re/_parser.py:292(tell)
+        1    0.000    0.000    0.000    0.000 <frozen _collections_abc>:553(__subclasshook__)
+        1    0.000    0.000    0.000    0.000 <frozen codecs>:94(__new__)
+        3    0.000    0.000    0.000    0.000 /usr/lib/python3.13/typing.py:260(_collect_type_parameters)
+       16    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/builder/__init__.py:282(reset)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:445(cb)
+        7    0.000    0.000    0.000    0.000 /usr/lib/python3.13/asyncio/base_events.py:1955(_timer_handle_cancelled)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:1128(find_spec)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:82(remove)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.13/typing.py:2003(_lazy_load_getattr_static)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.13/re/_parser.py:954(fix_flags)
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:1226(__exit__)
+        1    0.000    0.000    0.000    0.000 {method 'union' of 'frozenset' objects}
+        8    0.000    0.000    0.000    0.000 /home/guilherme13c/projects/simple-search-engine/crawler/venv/lib/python3.13/site-packages/bs4/builder/__init__.py:274(initialize_soup)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:190(_path_abspath)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:232(__init__)
+        3    0.000    0.000    0.000    0.000 {method 'release' of '_thread.lock' objects}
+        8    0.000    0.000    0.000    0.000 {built-in method builtins.callable}
+       10    0.000    0.000    0.000    0.000 /usr/lib/python3.13/urllib/robotparser.py:38(mtime)
+        4    0.000    0.000    0.000    0.000 {method 'find' of 'bytearray' objects}
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:674(_check_name_wrapper)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.13/re/_compiler.py:431(_get_iscased)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:982(find_spec)
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:1222(__enter__)
+        1    0.000    0.000    0.000    0.000 <frozen codecs>:312(__init__)
+       10    0.000    0.000    0.000    0.000 /usr/lib/python3.13/re/_parser.py:255(match)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:79(__init__)
+       11    0.000    0.000    0.000    0.000 {built-in method _sre.unicode_tolower}
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.13/threading.py:1265(_make_invoke_excepthook)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:173(__exit__)
+        6    0.000    0.000    0.000    0.000 {method 'appendleft' of 'collections.deque' objects}
+        4    0.000    0.000    0.000    0.000 /usr/lib/python3.13/re/_compiler.py:573(isstring)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.13/threading.py:1492(_register_atexit)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.13/logging/__init__.py:1750(getEffectiveLevel)
+        3    0.000    0.000    0.000    0.000 /usr/lib/python3.13/typing.py:164(_type_convert)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:185(_path_isabs)
+       10    0.000    0.000    0.000    0.000 {built-in method _imp.release_lock}
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.13/inspect.py:1784(_shadowed_dict_from_weakref_mro_tuple)
+       10    0.000    0.000    0.000    0.000 {built-in method _imp.acquire_lock}
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.13/threading.py:312(_release_save)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:48(_new_module)
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.__import__}
+        6    0.000    0.000    0.000    0.000 /usr/lib/python3.13/typing.py:1427(<genexpr>)
+        6    0.000    0.000    0.000    0.000 /usr/lib/python3.13/re/_parser.py:112(__init__)
+        4    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1500(_path_importer_cache)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.13/weakref.py:367(__init__)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:1390(_handle_fromlist)
+        6    0.000    0.000    0.000    0.000 {built-in method _thread.get_ident}
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.13/threading.py:1018(_set_ident)
+        3    0.000    0.000    0.000    0.000 /usr/lib/python3.13/asyncio/locks.py:75(__init__)
+        2    0.000    0.000    0.000    0.000 {built-in method posix.register_at_fork}
+        4    0.000    0.000    0.000    0.000 /usr/lib/python3.13/re/_parser.py:82(groups)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.13/re/_parser.py:76(__init__)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.13/threading.py:315(_acquire_restore)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.13/threading.py:1427(current_thread)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.13/weakref.py:427(__setitem__)
+        4    0.000    0.000    0.000    0.000 /usr/lib/python3.13/email/message.py:642(get_default_type)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.13/netrc.py:22(_netrclex)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.13/netrc.py:10(NetrcParseError)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:758(_validate_hash_pyc)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.13/netrc.py:66(netrc)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.13/threading.py:1145(daemon)
+        3    0.000    0.000    0.000    0.000 /usr/lib/python3.13/asyncio/locks.py:367(__init__)
+        2    0.000    0.000    0.000    0.000 {built-in method _codecs.utf_8_decode}
+        4    0.000    0.000    0.000    0.000 {built-in method _thread.allocate_lock}
+        4    0.000    0.000    0.000    0.000 {method 'rfind' of 'str' objects}
+        2    0.000    0.000    0.000    0.000 {built-in method _weakref._remove_dead_weakref}
+        2    0.000    0.000    0.000    0.000 {built-in method _imp.find_frozen}
+        2    0.000    0.000    0.000    0.000 {built-in method _imp.is_builtin}
+        4    0.000    0.000    0.000    0.000 /usr/lib/python3.13/re/_parser.py:171(__setitem__)
+        1    0.000    0.000    0.000    0.000 {method 'get' of 'mappingproxy' objects}
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:599(__init__)
+        2    0.000    0.000    0.000    0.000 {method 'remove' of 'collections.deque' objects}
+        4    0.000    0.000    0.000    0.000 {method 'isalnum' of 'str' objects}
+        2    0.000    0.000    0.000    0.000 {built-in method from_bytes}
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.13/concurrent/futures/thread.py:116(BrokenThreadPool)
+        1    0.000    0.000    0.000    0.000 {built-in method atexit.register}
+        2    0.000    0.000    0.000    0.000 <frozen codecs>:334(getstate)
+        1    0.000    0.000    0.000    0.000 {built-in method _thread.get_native_id}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.setattr}
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1184(__init__)
+        2    0.000    0.000    0.000    0.000 {built-in method _imp._fix_co_filename}
+        3    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:71(_relax_case)
+        3    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:653(has_location)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:412(__init__)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:158(__init__)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.13/asyncio/queues.py:242(join)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.13/threading.py:605(is_set)
+        1    0.000    0.000    0.000    0.000 <frozen codecs>:263(__init__)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1209(get_filename)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.13/logging/__init__.py:1353(disable)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1017(create_module)
+
+

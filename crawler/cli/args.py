@@ -4,7 +4,7 @@ from .defaults import *
 
 
 class Config:
-    seeds: str
+    seed_file: str
     corpus_dir: str
 
     max_page_count: int
@@ -23,8 +23,6 @@ class Config:
     use_checkpoint: bool
     make_checkpoints: bool
 
-    run: bool
-
 
 def parse_args() -> Config:
     parser = argparse.ArgumentParser()
@@ -32,9 +30,9 @@ def parse_args() -> Config:
     parser.add_argument(
         "-s",
         "--seeds",
-        help="Seed URLs to begin crawling",
+        help="File containing seed URLs to begin crawling",
         type=str,
-        dest='seeds',
+        dest='seed_file',
         required=True,
     )
     parser.add_argument(
@@ -113,7 +111,5 @@ def parse_args() -> Config:
         "User-Agent": args.user_agent,
     }
     args.corpus_dir = DEFAULT_CORPUS_DIR
-
-    args.run = True
 
     return args
