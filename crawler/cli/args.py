@@ -20,8 +20,6 @@ class Config:
     max_concurrency: int
 
     save_interval: int
-    use_checkpoint: bool
-    make_checkpoints: bool
 
     run: bool
 
@@ -84,25 +82,11 @@ def parse_args() -> Config:
         dest='default_crawl_delay',
     )
     parser.add_argument(
-        "--save_interval",
+        "--save-interval",
         help="Number of pages written to each warc file",
         type=int,
         default=DEFAULT_SAVE_INTERVAL,
         dest='save_interval',
-    )
-    parser.add_argument(
-        "--use-checkpoint",
-        help="Use a checkpoint file",
-        action='store_true',
-        dest='use_checkpoint',
-        default=False,
-    )
-    parser.add_argument(
-        "--make-checkpoints",
-        help="Save checkpoints to a file",
-        action='store_true',
-        dest='make_checkpoints',
-        default=False,
     )
 
     args: Config = Config()

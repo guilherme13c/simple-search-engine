@@ -1,4 +1,4 @@
-from concurrent.futures import Future, ThreadPoolExecutor, wait, FIRST_COMPLETED
+from concurrent.futures import ThreadPoolExecutor
 import threading
 import time
 from typing import Any, Dict, List, Set
@@ -10,6 +10,11 @@ from frontier.frontier import *
 from cli.defaults import *
 from domain_utils import DomainControler
 from warc_utils import WarcControler
+
+from bs4 import XMLParsedAsHTMLWarning
+import warnings
+
+warnings.filterwarnings("ignore", category=XMLParsedAsHTMLWarning)
 
 
 stdout_lock: threading.Lock
@@ -34,8 +39,7 @@ class Crawler:
     warc: WarcControler
     run: bool
     count: int
-
-    futures: List[Future[Any]]
+    t: float
 
     def __init__(self, cfg: cli.Config) -> None:
         self.cfg = cfg
@@ -48,7 +52,7 @@ class Crawler:
         self.warc = WarcControler(config=cfg)
         self.run = True
         self.count = 0
-        self.futures = []
+        self.t = time.time()
 
     def start(self) -> None:
         """Crawl using a thread pool to limit concurrency."""
@@ -61,9 +65,9 @@ class Crawler:
                 if not url or url in self.visited:
                     continue
 
-                self.futures.append(executor.submit(self._fetch_page, url))
+                executor.submit(self._fetch_page, url)
 
-            if not self.run and wait(fs=self.futures, return_when=FIRST_COMPLETED):
+            if not self.run:
                 executor.shutdown(wait=False, cancel_futures=True)
 
     def _fetch_page(self, url: str) -> None:
@@ -158,9 +162,12 @@ class Crawler:
         if self.count >= self.cfg.max_page_count:
             self.run = False
 
-        if self.cfg.show_progress and self.count % 5 == 0:
+        if self.cfg.show_progress and self.count % 50 == 0:
             with stdout_lock:
-                print(f"{self.count}/{self.cfg.max_page_count}")
+                print(f"{self.count}/{self.cfg.max_page_count} | {time.time() - self.t} seconds elapsed | {self.count / (time.time() - self.t):.2f} pages/second")
+
+        if self.count % 1000 == 0:
+            self.domain_data.clear()
 
     def _enqueue_seeds(self) -> None:
         with open(file=self.cfg.seed_file, mode='r') as f:
