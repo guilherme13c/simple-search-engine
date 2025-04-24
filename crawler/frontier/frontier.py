@@ -1,4 +1,3 @@
-from typing import List
 from queue import PriorityQueue, Empty, Full
 import random
 from typing import Tuple

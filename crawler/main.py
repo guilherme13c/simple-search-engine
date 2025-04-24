@@ -1,4 +1,5 @@
 from concurrent.futures import ThreadPoolExecutor
+import sys
 import threading
 import time
 from typing import Any, Dict, List, Set
@@ -33,7 +34,7 @@ def main() -> None:
 class Crawler:
     cfg: cli.Config
     fontier: Frontier
-    visited: Set[str]
+    visited: Set[int]
     domain_data: Dict[str, DomainControler]
     semaphore: threading.Semaphore
     warc: WarcControler
@@ -62,7 +63,7 @@ class Crawler:
         with ThreadPoolExecutor(max_workers=self.cfg.max_concurrency) as executor:
             while self.run:
                 url: str | None = self.frontier.get()
-                if not url or url in self.visited:
+                if not url or hash(url) in self.visited:
                     continue
 
                 executor.submit(self._fetch_page, url)
@@ -155,7 +156,7 @@ class Crawler:
             if link.startswith("http") and link not in self.visited:
                 self.frontier.put(link)
 
-        self.visited.add(url)
+        self.visited.add(hash(url))
 
         self.count += 1
 
@@ -168,6 +169,10 @@ class Crawler:
 
         if self.count % 1000 == 0:
             self.domain_data.clear()
+            print(f"frontier size: {sys.getsizeof(self.frontier.queue.queue)} bytes")
+            print(f"visited size: {sys.getsizeof(self.visited)} bytes")
+            print(f"domain data size: {sys.getsizeof(self.domain_data)} bytes")
+            print(f"warc controler size: {sys.getsizeof(self.warc)} bytes")
 
     def _enqueue_seeds(self) -> None:
         with open(file=self.cfg.seed_file, mode='r') as f:
