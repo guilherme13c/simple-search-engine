@@ -112,7 +112,7 @@ class Crawler:
             try:
                 response = requests.get(
                     url=url,
-                    timeout=5,
+                    timeout=1,
                     headers=self.cfg.fetch_header,
                 )
                 response.raise_for_status()
@@ -169,7 +169,8 @@ class Crawler:
 
         if self.count % 1000 == 0:
             self.domain_data.clear()
-            print(f"frontier size: {sys.getsizeof(self.frontier.queue.queue)} bytes")
+            print(
+                f"frontier size: {sys.getsizeof(self.frontier.queue.queue)} bytes")
             print(f"visited size: {sys.getsizeof(self.visited)} bytes")
             print(f"domain data size: {sys.getsizeof(self.domain_data)} bytes")
             print(f"warc controler size: {sys.getsizeof(self.warc)} bytes")
