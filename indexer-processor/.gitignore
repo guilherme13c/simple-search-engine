@@ -2,3 +2,4 @@ venv/
 indexes/
 corpus.jsonl
 mini-corpus.jsonl
+*__pycache__*
