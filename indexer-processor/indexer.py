@@ -1,8 +1,8 @@
-from utils.linked_list import LinkedList
 from utils.cli import Cli
 from utils.stats import Stats
 from utils.reader import Reader
 from utils.record_parser import RecordParser
+from utils.index import Index
 
 
 def main():
@@ -10,6 +10,8 @@ def main():
     stats = Stats()
 
     parser = RecordParser()
+
+    index = Index(3)
 
     with Reader(args.corpusPath) as reader:
         run = True
@@ -19,8 +21,12 @@ def main():
                 run = False
                 continue
 
+            docId = int(record.get('id', -1))
             toks = parser.parse(record)
             print(toks)
+
+            for tok in toks:
+                index.add(tok, docId)
 
     stats.print()
 

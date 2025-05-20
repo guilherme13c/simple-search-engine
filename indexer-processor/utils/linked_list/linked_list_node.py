@@ -1,4 +1,7 @@
 class LinkedListNode:
-    def __init__(self, docId: int = -1, next = None):  # type: ignore
-        self.docId = docId
+    val: int
+    next: 'LinkedListNode | None'
+
+    def __init__(self, val: int = -1, next: 'LinkedListNode | None' = None) -> None:
+        self.val = val
         self.next = next
