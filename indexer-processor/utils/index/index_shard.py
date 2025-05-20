@@ -22,7 +22,6 @@ class IndexShard:
             self._data[word].add(docId)
 
     def contains(self, word: str, docId: int):
-        print(word, docId)
         with self._lock:
             if not word in self._data:
                 return False

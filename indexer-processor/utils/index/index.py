@@ -10,9 +10,13 @@ class Index:
         self._size = n
         self._shards = [IndexShard() for _ in range(n)]
 
-    def _getIdxShardFor(self, word: str):
+    def _get_shard_index(self, word: str) -> int:
         return hash(word) % self._size
 
-    def add(self, word: str, docId: int):
-        idx = self._getIdxShardFor(word)
+    def add(self, word: str, docId: int) -> None:
+        idx = self._get_shard_index(word)
         self._shards[idx].add(word, docId)
+
+    def contains(self, word: str, docId: int) -> bool:
+        idx = self._get_shard_index(word)
+        return self._shards[idx].contains(word, docId)

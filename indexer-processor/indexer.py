@@ -4,7 +4,6 @@ from utils.reader import Reader
 from utils.record_parser import RecordParser
 from utils.index import Index
 
-
 def main():
     args = Cli()
     stats = Stats()
@@ -23,7 +22,6 @@ def main():
 
             docId = int(record.get('id', -1))
             toks = parser.parse(record)
-            print(toks)
 
             for tok in toks:
                 index.add(tok, docId)
