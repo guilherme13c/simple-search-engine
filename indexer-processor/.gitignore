@@ -1,0 +1,4 @@
+venv/
+indexes/
+corpus.jsonl
+mini-corpus.jsonl
