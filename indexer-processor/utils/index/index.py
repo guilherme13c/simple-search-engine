@@ -6,6 +6,7 @@ import os
 import shutil
 import psutil
 import gc
+import hashlib
 
 
 class Index:
@@ -86,11 +87,11 @@ class Index:
         return index
 
     def _get_shard_index(self, word: str) -> int:
-        return hash(word) % self._size
+        b = hashlib.sha256(word.encode()).hexdigest()
+        return int(b, 16) % self._size
 
     def _memory_usage_megabytes(self) -> int:
         mem_mb = psutil.Process(os.getpid()).memory_info().rss//(1024*1024)
-        print(f"mem (mb):\t{mem_mb}")
         return mem_mb
 
     def _load_shard(self, idx: int) -> None:
@@ -99,7 +100,6 @@ class Index:
                 os.path.join(self._path, f'shard_{idx}.pkl'))
 
     def _flush_shard(self, idx: int) -> None:
-        print(f"flushing shard {idx}")
         if self._shards[idx]:
             self._shards[idx].save(  # type: ignore
                 os.path.join(self._path, f'shard_{idx}.pkl')
