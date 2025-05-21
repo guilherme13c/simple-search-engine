@@ -1,7 +1,6 @@
 from typing import List
 from .index_shard import IndexShard
 
-
 class Index:
     _size: int
     _shards: List[IndexShard]

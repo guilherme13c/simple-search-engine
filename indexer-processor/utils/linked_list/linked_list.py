@@ -1,24 +1,32 @@
+from .linked_list_node import LinkedListNode
 from . import linked_list_node
+import numpy as np
 
 
 class LinkedList:
-    _head: linked_list_node.LinkedListNode
+    _head: LinkedListNode
     _size: int
 
-    def __init__(self):
-        self._head = linked_list_node.LinkedListNode()
+    def __init__(self) -> None:
+        self._head = LinkedListNode()
         self._size = 0
 
-    def add(self, val: int):
+    def add(self, val: int) -> None:
         self._size += 1
 
         curr = self._head
 
+        while curr and curr.skip and curr.skip.val < val:
+            curr = curr.skip
+
         while curr and curr.next and curr.next.val < val:
             curr = curr.next
 
-        node = linked_list_node.LinkedListNode(val, curr.next)
+        node = LinkedListNode(val, curr.next)
         curr.next = node
+
+        if np.random.rand() > 0.2:
+            self.build_skips()
 
     def index(self, val: int) -> int:
         curr = self._head.next
@@ -29,3 +37,18 @@ class LinkedList:
             curr = curr.next
             idx += 1
         return -1
+
+    def build_skips(self) -> None:
+        skip_interval = int(np.sqrt(self._size)) or 1
+        curr = self._head.next
+        nodes = []
+
+        while curr:
+            nodes.append(curr)
+            curr = curr.next
+
+        for i in range(len(nodes)):
+            if i + skip_interval < len(nodes):
+                nodes[i].skip = nodes[i + skip_interval]
+            else:
+                nodes[i].skip = None
