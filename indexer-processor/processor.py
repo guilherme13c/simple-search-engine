@@ -86,7 +86,7 @@ class QueryProcessor:
         return {'Query': query, 'Results': results}
 
 
-def main():
+def main() -> None:
     args = CliProcessor()
     qp = QueryProcessor(args.index_path, args.ranker, args.page_size)
     with open(args.queries_path) as qf:
@@ -94,7 +94,7 @@ def main():
             query = line.strip()
             if not query:
                 continue
-            output = qp.process_query(query)
+            output: Dict[Any, Any] = qp.process_query(query)
             print(json.dumps(output))
 
 
