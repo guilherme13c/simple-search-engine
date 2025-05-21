@@ -4,7 +4,7 @@ import json
 from typing import List, Dict, Any
 from utils.cli import CliProcessor
 from utils.parser import RecordParser
-
+from utils.wand import WandTermPointer, wand_query
 
 class QueryProcessor:
     def __init__(self, index_dir: str, ranker: str, page_size: int) -> None:
@@ -20,8 +20,7 @@ class QueryProcessor:
         self.parser = RecordParser()
         self.k1 = 1.5
         self.b = 0.75
-        self.inv_file = open(os.path.join(
-            index_dir, 'inverted_index.jsonl'), 'r')
+        self.inv_file = open(os.path.join(index_dir, 'inverted_index.jsonl'), 'r')
         self.page_size: int = page_size
 
     def _read_postings(self, term: str) -> Dict[int, int]:
@@ -33,51 +32,47 @@ class QueryProcessor:
         data = json.loads(line)
         return {int(doc): freq for doc, freq in data['postings'].items()}
 
+    def _score_bm25(self, term: str, freq: int, doc_len: int) -> float:
+        df = self.lexicon[term]['df']
+        idf = np.log((self.N - df + 0.5) / (df + 0.5) + 1)
+        num: float = freq * (self.k1 + 1)
+        denom: float = freq + self.k1 * (1 - self.b + self.b * doc_len / self.avg_doc_len)
+        return idf * (num / denom)
+
     def _score_tfidf(self, term: str, freq: int, doc_len: int) -> float:
         df = self.lexicon[term]['df']
         tf = 1 + np.log(freq)
         idf = np.log((self.N) / df)
         return tf * idf
 
-    def _score_bm25(self, term: str, freq: int, doc_len: int) -> float:
-        df = self.lexicon[term]['df']
-        idf = np.log((self.N - df + 0.5) / (df + 0.5) + 1)
-        num: float = freq * (self.k1 + 1)
-        denom: float = freq + self.k1 * \
-            (1 - self.b + self.b * doc_len / self.avg_doc_len)
-        return idf * (num / denom)
-
     def process_query(self, query: str) -> Dict:
         toks = self.parser.parse({'title': query, 'text': ''})
         if not toks:
             return {'Query': query, 'Results': []}
-        postings_lists: List[Dict[int, int]] = [
-            self._read_postings(tok) for tok in toks]
-        common_docs = set(postings_lists[0].keys())
-        for p in postings_lists[1:]:
-            common_docs &= p.keys()
-        scores: Dict[int, float] = {}
-        for doc in common_docs:
-            score = 0.0
-            for term in toks:
-                freq = postings_lists[toks.index(term)][doc]
-                if self.ranker == 'TFIDF':
-                    score += self._score_tfidf(term, freq, self.doc_index[doc])
-                else:
-                    score += self._score_bm25(term, freq, self.doc_index[doc])
-            scores[doc] = score
-        # top 10
-        top = sorted(scores.items(), key=lambda x: x[1], reverse=True)[:self.page_size]
-        results = [{'ID': f"{doc:07d}", 'Score': round(
-            score, 4)} for doc, score in top]
+
+        pointers: List[WandTermPointer] = []
+        for term in toks:
+            postings: Dict[int, int] = self._read_postings(term)
+            if not postings:
+                continue
+            if self.ranker == 'TFIDF':
+                ub = max(self._score_tfidf(term, f, self.doc_index[doc]) for doc, f in postings.items())
+            else:
+                ub = max(self._score_bm25(term, f, self.doc_index[doc]) for doc, f in postings.items())
+            pointers.append(WandTermPointer(term, postings, ub))
+
+        def score_fn(term: str, freq: int, doc_id: int) -> float:
+            doc_len = self.doc_index[doc_id]
+            return self._score_tfidf(term, freq, doc_len) if self.ranker == 'TFIDF' else self._score_bm25(term, freq, doc_len)
+
+        top_k = wand_query(pointers, self.page_size, score_fn)
+        results = [{'ID': f"{doc:07d}", 'Score': round(score, 4)} for score, doc in top_k]
         return {'Query': query, 'Results': results}
 
 
 def main():
     args = CliProcessor()
-
     qp = QueryProcessor(args.index_path, args.ranker, args.page_size)
-
     with open(args.queries_path) as qf:
         for line in qf:
             query = line.strip()
@@ -89,3 +84,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
