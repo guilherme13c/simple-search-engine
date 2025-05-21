@@ -1,5 +1,4 @@
 from .linked_list_node import LinkedListNode
-from . import linked_list_node
 import numpy as np
 
 

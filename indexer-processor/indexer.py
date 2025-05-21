@@ -1,16 +1,16 @@
+from typing import List
 from utils.cli import Cli
-from utils.stats import Stats
 from utils.reader import Reader
 from utils.record_parser import RecordParser
 from utils.index import Index
 
-def main():
+
+def main() -> None:
     args = Cli()
-    stats = Stats()
 
     parser = RecordParser()
 
-    index = Index(3)
+    index = Index(args.indexDirPath, 3)
 
     with Reader(args.corpusPath) as reader:
         run = True
@@ -21,13 +21,12 @@ def main():
                 continue
 
             docId = int(record.get('id', -1))
-            toks = parser.parse(record)
+            toks: List[str] = parser.parse(record)
 
             for tok in toks:
                 index.add(tok, docId)
 
-    stats.print()
-
+    index.save()
 
 if __name__ == "__main__":
     main()
