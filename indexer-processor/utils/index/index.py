@@ -27,21 +27,21 @@ class Index:
         self._op_count = 0
 
         for i in range(self._size):
-            self._flush_shard(i)
+            self._save_shard(i)
 
     def add(self, word: str, docId: int) -> None:
         idx = self._get_shard_index(word)
         self._load_shard(idx)
         self._shards[idx].add(word, docId)  # type: ignore
-        self.flush_if_needed()
+        self._flush()
 
     def contains(self, word: str, docId: int) -> bool:
         idx = self._get_shard_index(word)
         self._load_shard(idx)
-        self.flush_if_needed()
+        self._flush()
         return self._shards[idx].contains(word, docId)  # type: ignore
 
-    def flush_if_needed(self) -> None:
+    def _flush(self) -> None:
         self._op_count += 1
 
         if self._op_count % 100 != 0:
@@ -51,7 +51,7 @@ class Index:
 
         i = 0
         while curr_mem > 0.9 * self._available_memory and i < self._size:
-            self._flush_shard(i)
+            self._save_shard(i)
             i += 1
         gc.collect()
 
@@ -99,7 +99,7 @@ class Index:
             self._shards[idx] = IndexShard.load(
                 os.path.join(self._path, f'shard_{idx}.pkl'))
 
-    def _flush_shard(self, idx: int) -> None:
+    def _save_shard(self, idx: int) -> None:
         if self._shards[idx]:
             self._shards[idx].save(  # type: ignore
                 os.path.join(self._path, f'shard_{idx}.pkl')
