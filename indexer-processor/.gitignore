@@ -3,3 +3,4 @@ indexes/
 corpus.jsonl
 mini-corpus.jsonl
 *__pycache__*
+queries.txt

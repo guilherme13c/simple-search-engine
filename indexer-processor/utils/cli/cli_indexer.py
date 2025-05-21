@@ -1,10 +1,11 @@
 import argparse
 
 
-class Cli:
-    corpusPath: str
-    indexDirPath: str
-    availableMemory: int
+class CliIndexer:
+    corpus_path: str
+    index_dir: str
+    available_memory: int
+    workers: int
 
     def __init__(self):
         parser = argparse.ArgumentParser()
@@ -16,16 +17,16 @@ class Cli:
             type=str,
             required=False,
             default="corpus.jsonl",
-            dest='corpusPath',
+            dest='corpus_path',
         )
         parser.add_argument(
             "-i",
             "--index",
-            help="path to the directory where indexes should be created",
+            help="path to the directory where the indexes should be created",
             type=str,
             required=False,
             default="indexes",
-            dest='indexDirPath',
+            dest='index_dir',
         )
         parser.add_argument(
             "-m",
@@ -34,7 +35,16 @@ class Cli:
             type=int,
             required=False,
             default=1024,
-            dest='availableMemory',
+            dest='available_memory',
+        )
+        parser.add_argument(
+            "-w",
+            "--workers",
+            help="number of workers",
+            type=int,
+            required=False,
+            default=0,
+            dest='workers',
         )
 
         parser.parse_args(namespace=self)
