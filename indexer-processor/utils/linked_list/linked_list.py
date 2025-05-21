@@ -1,5 +1,6 @@
 from .linked_list_node import LinkedListNode
-import numpy as np
+import random
+import math
 
 
 class LinkedList:
@@ -24,7 +25,7 @@ class LinkedList:
         node = LinkedListNode(val, curr.next)
         curr.next = node
 
-        if np.random.rand() > 0.2:
+        if random.random() > 0.05:
             self.build_skips()
 
     def index(self, val: int) -> int:
@@ -38,7 +39,7 @@ class LinkedList:
         return -1
 
     def build_skips(self) -> None:
-        skip_interval = int(np.sqrt(self._size)) or 1
+        skip_interval = int(math.sqrt(self._size)) or 1
         curr = self._head.next
         nodes = []
 
@@ -51,3 +52,18 @@ class LinkedList:
                 nodes[i].skip = nodes[i + skip_interval]
             else:
                 nodes[i].skip = None
+
+    def __getstate__(self):
+        """Serialize as a flat list of values."""
+        values = []
+        curr = self._head.next
+        while curr:
+            values.append(curr.val)
+            curr = curr.next
+        return {'_values': values}
+
+    def __setstate__(self, state):
+        """Rebuild the linked list from a list of values."""
+        self.__init__()  # reinitialize
+        for val in state['_values']:
+            self.add(val)

@@ -10,8 +10,9 @@ def main() -> None:
 
     parser = RecordParser()
 
-    index = Index(args.indexDirPath, 3)
+    index = Index(args.indexDirPath, args.availableMemory, 16)
 
+    count = 0
     with Reader(args.corpusPath) as reader:
         run = True
         while run:
@@ -26,7 +27,13 @@ def main() -> None:
             for tok in toks:
                 index.add(tok, docId)
 
+            count += 1
+
+            if count % 100 == 0:
+                print(f"count:\t{count}")
+
     index.save()
+
 
 if __name__ == "__main__":
     main()

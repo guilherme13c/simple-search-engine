@@ -4,43 +4,55 @@ from typing import List
 import json
 import os
 import shutil
+import psutil
+import gc
 
 
 class Index:
     _size: int
     _shards: List[IndexShard | None]
     _path: str
+    _available_memory: int
+    _op_count: int
 
-    def __init__(self, path: str, n: int = 16) -> None:
+    def __init__(self, path: str, available_memory: int = 1024, n: int = 16) -> None:
         shutil.rmtree(path, ignore_errors=True)
         os.makedirs(path)
 
         self._size = n
         self._shards = [IndexShard() for _ in range(n)]
         self._path = path
+        self._available_memory = available_memory
+        self._op_count = 0
 
-        for i, shard in enumerate(self._shards):
-            shard.save(f"{self._path}/shard_{i}.pkl")  # type: ignore
-        self._shards = [None]*n
-
-    def _get_shard_index(self, word: str) -> int:
-        return hash(word) % self._size
+        for i in range(self._size):
+            self._flush_shard(i)
 
     def add(self, word: str, docId: int) -> None:
         idx = self._get_shard_index(word)
-        if self._shards[idx] is None:
-            self._shards[idx] = IndexShard.load(
-                os.path.join(self._path, f'shard_{idx}.pkl'))
-
+        self._load_shard(idx)
         self._shards[idx].add(word, docId)  # type: ignore
+        self.flush_if_needed()
 
     def contains(self, word: str, docId: int) -> bool:
         idx = self._get_shard_index(word)
-        if self._shards[idx] is None:
-            self._shards[idx] = IndexShard.load(
-                os.path.join(self._path, f'shard_{idx}.pkl'))
-
+        self._load_shard(idx)
+        self.flush_if_needed()
         return self._shards[idx].contains(word, docId)  # type: ignore
+
+    def flush_if_needed(self) -> None:
+        self._op_count += 1
+
+        if self._op_count % 100 != 0:
+            return
+
+        curr_mem = self._memory_usage_megabytes()
+
+        i = 0
+        while curr_mem > 0.9 * self._available_memory and i < self._size:
+            self._flush_shard(i)
+            i += 1
+        gc.collect()
 
     def save(self) -> None:
         os.makedirs(self._path, exist_ok=True)
@@ -72,3 +84,24 @@ class Index:
         index._shards = shards  # type: ignore
 
         return index
+
+    def _get_shard_index(self, word: str) -> int:
+        return hash(word) % self._size
+
+    def _memory_usage_megabytes(self) -> int:
+        mem_mb = psutil.Process(os.getpid()).memory_info().rss//(1024*1024)
+        print(f"mem (mb):\t{mem_mb}")
+        return mem_mb
+
+    def _load_shard(self, idx: int) -> None:
+        if self._shards[idx] is None:
+            self._shards[idx] = IndexShard.load(
+                os.path.join(self._path, f'shard_{idx}.pkl'))
+
+    def _flush_shard(self, idx: int) -> None:
+        print(f"flushing shard {idx}")
+        if self._shards[idx]:
+            self._shards[idx].save(  # type: ignore
+                os.path.join(self._path, f'shard_{idx}.pkl')
+            )
+            self._shards[idx] = None
