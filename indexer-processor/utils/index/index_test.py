@@ -23,7 +23,7 @@ class TestIndex(unittest.TestCase):
 
         self.index.add(word, docId)
 
-        self.assertTrue(self.index._shards[shard_idx].contains(word, docId))
+        self.assertTrue(self.index._shards[shard_idx].contains(word, docId)) # type: ignore
 
     def test_contains_delegates_and_returns(self) -> None:
         word = "banana"
