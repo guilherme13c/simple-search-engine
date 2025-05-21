@@ -6,6 +6,7 @@ from utils.cli import CliProcessor
 from utils.parser import RecordParser
 from utils.wand import WandTermPointer, wand_query
 
+
 class QueryProcessor:
     def __init__(self, index_dir: str, ranker: str, page_size: int) -> None:
         self.index_dir: str = index_dir
@@ -20,7 +21,8 @@ class QueryProcessor:
         self.parser = RecordParser()
         self.k1 = 1.5
         self.b = 0.75
-        self.inv_file = open(os.path.join(index_dir, 'inverted_index.jsonl'), 'r')
+        self.inv_file = open(os.path.join(
+            index_dir, 'inverted_index.jsonl'), 'r')
         self.page_size: int = page_size
 
     def _read_postings(self, term: str) -> Dict[int, int]:
@@ -36,7 +38,8 @@ class QueryProcessor:
         df = self.lexicon[term]['df']
         idf = np.log((self.N - df + 0.5) / (df + 0.5) + 1)
         num: float = freq * (self.k1 + 1)
-        denom: float = freq + self.k1 * (1 - self.b + self.b * doc_len / self.avg_doc_len)
+        denom: float = freq + self.k1 * \
+            (1 - self.b + self.b * doc_len / self.avg_doc_len)
         return idf * (num / denom)
 
     def _score_tfidf(self, term: str, freq: int, doc_len: int) -> float:
@@ -55,18 +58,31 @@ class QueryProcessor:
             postings: Dict[int, int] = self._read_postings(term)
             if not postings:
                 continue
+
             if self.ranker == 'TFIDF':
-                ub = max(self._score_tfidf(term, f, self.doc_index[doc]) for doc, f in postings.items())
+                ub = max(self._score_tfidf(
+                    term, f, self.doc_index[doc]) for doc, f in postings.items())
             else:
-                ub = max(self._score_bm25(term, f, self.doc_index[doc]) for doc, f in postings.items())
+                ub = max(self._score_bm25(
+                    term, f, self.doc_index[doc]) for doc, f in postings.items())
             pointers.append(WandTermPointer(term, postings, ub))
 
         def score_fn(term: str, freq: int, doc_id: int) -> float:
             doc_len = self.doc_index[doc_id]
-            return self._score_tfidf(term, freq, doc_len) if self.ranker == 'TFIDF' else self._score_bm25(term, freq, doc_len)
+
+            if self.ranker == 'TFIDF':
+                return self._score_tfidf(term, freq, doc_len)
+
+            return self._score_bm25(term, freq, doc_len)
 
         top_k = wand_query(pointers, self.page_size, score_fn)
-        results = [{'ID': f"{doc:07d}", 'Score': round(score, 4)} for score, doc in top_k]
+        results = [
+            {
+                'ID': f"{doc:07d}",
+                'Score': round(score, 4)
+            } for score, doc in top_k
+        ]
+
         return {'Query': query, 'Results': results}
 
 
@@ -84,4 +100,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
