@@ -9,3 +9,4 @@ queries.txt
 BM25_results.json
 TFIDF_results.json
 test_queries.json
+*.zip
