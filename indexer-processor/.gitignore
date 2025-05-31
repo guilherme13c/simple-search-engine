@@ -1,6 +1,11 @@
 venv/
+*__pycache__*
+
 indexes/
 corpus.jsonl
 mini-corpus.jsonl
-*__pycache__*
 queries.txt
+
+BM25_results.json
+TFIDF_results.json
+test_queries.json

@@ -1,0 +1,1995 @@
+# Information Retrieval System Performance Results
+# Generated on: Sat May 31 01:41:37 PM -03 2025
+# System: Linux archlinux 6.14.7-arch2-1 #1 SMP PREEMPT_DYNAMIC Thu, 22 May 2025 05:37:49 +0000 x86_64 GNU/Linux
+# Python Version: Python 3.13.3
+
+================================================================================
+SYSTEM CONFIGURATION
+================================================================================
+Memory Limit: 1024 MB
+Corpus File: corpus.jsonl
+Index Directory: indexes
+CPU Cores: 12
+Available Memory: 15Gi
+
+================================================================================
+SYSTEM MONITORING
+================================================================================
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:            15Gi       3.9Gi       8.4Gi        77Mi       3.6Gi        11Gi
+Swap:          4.0Gi       2.0Gi       2.0Gi
+
+Disk Usage:
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/nvme0n1p2  468G   86G  359G  20% /
+
+CPU Information:
+CPU(s):                                  12
+Model name:                              AMD Ryzen 5 5500
+CPU(s) scaling MHz:                      91%
+
+================================================================================
+CORPUS ANALYSIS
+================================================================================
+Total Documents: 4641784
+Corpus File Size: 2.1G
+Corpus File Size (bytes): 2230604986
+
+Sample Document Structure:
+...
+
+================================================================================
+INDEXING PERFORMANCE
+================================================================================
+Indexing Started: Sat May 31 01:41:39 PM -03 2025
+Command: python3 indexer.py -m 1024 -c corpus.jsonl -i indexes
+
+Indexing Completed: Sat May 31 01:47:34 PM -03 2025
+Wall Clock Time: 355 seconds
+
+Indexer Statistics:
+{"Index Size": 1913, "Elapsed Time": 351, "Number of Lists": 2730497, "Average List Size": 44.08}
+
+Indexer Console Output:
+Processed 10000 docs...
+Processed 20000 docs...
+Processed 30000 docs...
+Processed 40000 docs...
+Processed 50000 docs...
+Processed 60000 docs...
+Processed 70000 docs...
+Processed 80000 docs...
+Processed 90000 docs...
+Processed 100000 docs...
+Processed 110000 docs...
+Processed 120000 docs...
+Processed 130000 docs...
+Processed 140000 docs...
+Processed 150000 docs...
+Processed 160000 docs...
+Processed 170000 docs...
+Processed 180000 docs...
+Processed 190000 docs...
+Processed 200000 docs...
+Processed 210000 docs...
+Processed 220000 docs...
+Processed 230000 docs...
+Processed 240000 docs...
+Processed 250000 docs...
+Processed 260000 docs...
+Processed 270000 docs...
+Processed 280000 docs...
+Processed 290000 docs...
+Processed 300000 docs...
+Processed 310000 docs...
+Processed 320000 docs...
+Processed 330000 docs...
+Processed 340000 docs...
+Processed 350000 docs...
+Processed 360000 docs...
+Processed 370000 docs...
+Processed 380000 docs...
+Processed 390000 docs...
+Processed 400000 docs...
+Processed 410000 docs...
+Processed 420000 docs...
+Processed 430000 docs...
+Processed 440000 docs...
+Processed 450000 docs...
+Processed 460000 docs...
+Processed 470000 docs...
+Processed 480000 docs...
+Processed 490000 docs...
+Processed 500000 docs...
+Processed 510000 docs...
+Processed 520000 docs...
+Processed 530000 docs...
+Processed 540000 docs...
+Processed 550000 docs...
+Processed 560000 docs...
+Processed 570000 docs...
+Processed 580000 docs...
+Processed 590000 docs...
+Processed 600000 docs...
+Processed 610000 docs...
+Processed 620000 docs...
+Processed 630000 docs...
+Processed 640000 docs...
+Processed 650000 docs...
+Processed 660000 docs...
+Processed 670000 docs...
+Flushed partial index #1 to disk.
+Flushed partial index #2 to disk.
+Flushed partial index #3 to disk.
+Flushed partial index #4 to disk.
+Processed 680000 docs...
+Processed 690000 docs...
+Processed 700000 docs...
+Processed 710000 docs...
+Processed 720000 docs...
+Processed 730000 docs...
+Processed 740000 docs...
+Processed 750000 docs...
+Processed 760000 docs...
+Processed 770000 docs...
+Processed 780000 docs...
+Processed 790000 docs...
+Processed 800000 docs...
+Processed 810000 docs...
+Processed 820000 docs...
+Processed 830000 docs...
+Processed 840000 docs...
+Processed 850000 docs...
+Processed 860000 docs...
+Processed 870000 docs...
+Processed 880000 docs...
+Processed 890000 docs...
+Processed 900000 docs...
+Processed 910000 docs...
+Processed 920000 docs...
+Processed 930000 docs...
+Processed 940000 docs...
+Processed 950000 docs...
+Processed 960000 docs...
+Processed 970000 docs...
+Processed 980000 docs...
+Processed 990000 docs...
+Processed 1000000 docs...
+Processed 1010000 docs...
+Processed 1020000 docs...
+Processed 1030000 docs...
+Processed 1040000 docs...
+Processed 1050000 docs...
+Processed 1060000 docs...
+Processed 1070000 docs...
+Processed 1080000 docs...
+Processed 1090000 docs...
+Processed 1100000 docs...
+Processed 1110000 docs...
+Processed 1120000 docs...
+Processed 1130000 docs...
+Processed 1140000 docs...
+Processed 1150000 docs...
+Processed 1160000 docs...
+Processed 1170000 docs...
+Processed 1180000 docs...
+Processed 1190000 docs...
+Processed 1200000 docs...
+Processed 1210000 docs...
+Processed 1220000 docs...
+Processed 1230000 docs...
+Processed 1240000 docs...
+Processed 1250000 docs...
+Processed 1260000 docs...
+Processed 1270000 docs...
+Processed 1280000 docs...
+Processed 1290000 docs...
+Processed 1300000 docs...
+Flushed partial index #5 to disk.
+Processed 1310000 docs...
+Processed 1320000 docs...
+Processed 1330000 docs...
+Processed 1340000 docs...
+Processed 1350000 docs...
+Processed 1360000 docs...
+Processed 1370000 docs...
+Processed 1380000 docs...
+Processed 1390000 docs...
+Processed 1400000 docs...
+Processed 1410000 docs...
+Processed 1420000 docs...
+Processed 1430000 docs...
+Processed 1440000 docs...
+Processed 1450000 docs...
+Processed 1460000 docs...
+Processed 1470000 docs...
+Processed 1480000 docs...
+Processed 1490000 docs...
+Processed 1500000 docs...
+Processed 1510000 docs...
+Processed 1520000 docs...
+Processed 1530000 docs...
+Processed 1540000 docs...
+Processed 1550000 docs...
+Processed 1560000 docs...
+Processed 1570000 docs...
+Processed 1580000 docs...
+Processed 1590000 docs...
+Processed 1600000 docs...
+Processed 1610000 docs...
+Processed 1620000 docs...
+Processed 1630000 docs...
+Processed 1640000 docs...
+Processed 1650000 docs...
+Processed 1660000 docs...
+Processed 1670000 docs...
+Processed 1680000 docs...
+Processed 1690000 docs...
+Processed 1700000 docs...
+Processed 1710000 docs...
+Processed 1720000 docs...
+Processed 1730000 docs...
+Processed 1740000 docs...
+Processed 1750000 docs...
+Processed 1760000 docs...
+Processed 1770000 docs...
+Processed 1780000 docs...
+Processed 1790000 docs...
+Processed 1800000 docs...
+Processed 1810000 docs...
+Processed 1820000 docs...
+Processed 1830000 docs...
+Flushed partial index #6 to disk.
+Processed 1840000 docs...
+Processed 1850000 docs...
+Processed 1860000 docs...
+Processed 1870000 docs...
+Processed 1880000 docs...
+Processed 1890000 docs...
+Processed 1900000 docs...
+Processed 1910000 docs...
+Processed 1920000 docs...
+Processed 1930000 docs...
+Processed 1940000 docs...
+Processed 1950000 docs...
+Processed 1960000 docs...
+Processed 1970000 docs...
+Processed 1980000 docs...
+Processed 1990000 docs...
+Processed 2000000 docs...
+Processed 2010000 docs...
+Processed 2020000 docs...
+Processed 2030000 docs...
+Processed 2040000 docs...
+Processed 2050000 docs...
+Processed 2060000 docs...
+Processed 2070000 docs...
+Processed 2080000 docs...
+Processed 2090000 docs...
+Processed 2100000 docs...
+Processed 2110000 docs...
+Processed 2120000 docs...
+Processed 2130000 docs...
+Processed 2140000 docs...
+Processed 2150000 docs...
+Processed 2160000 docs...
+Processed 2170000 docs...
+Processed 2180000 docs...
+Processed 2190000 docs...
+Processed 2200000 docs...
+Processed 2210000 docs...
+Processed 2220000 docs...
+Processed 2230000 docs...
+Processed 2240000 docs...
+Processed 2250000 docs...
+Processed 2260000 docs...
+Processed 2270000 docs...
+Processed 2280000 docs...
+Processed 2290000 docs...
+Processed 2300000 docs...
+Processed 2310000 docs...
+Processed 2320000 docs...
+Processed 2330000 docs...
+Processed 2340000 docs...
+Processed 2350000 docs...
+Flushed partial index #7 to disk.
+Processed 2360000 docs...
+Processed 2370000 docs...
+Processed 2380000 docs...
+Processed 2390000 docs...
+Processed 2400000 docs...
+Processed 2410000 docs...
+Processed 2420000 docs...
+Processed 2430000 docs...
+Processed 2440000 docs...
+Processed 2450000 docs...
+Processed 2460000 docs...
+Processed 2470000 docs...
+Processed 2480000 docs...
+Processed 2490000 docs...
+Processed 2500000 docs...
+Processed 2510000 docs...
+Processed 2520000 docs...
+Processed 2530000 docs...
+Processed 2540000 docs...
+Processed 2550000 docs...
+Processed 2560000 docs...
+Processed 2570000 docs...
+Processed 2580000 docs...
+Processed 2590000 docs...
+Processed 2600000 docs...
+Processed 2610000 docs...
+Processed 2620000 docs...
+Processed 2630000 docs...
+Processed 2640000 docs...
+Processed 2650000 docs...
+Processed 2660000 docs...
+Processed 2670000 docs...
+Processed 2680000 docs...
+Processed 2690000 docs...
+Processed 2700000 docs...
+Processed 2710000 docs...
+Processed 2720000 docs...
+Processed 2730000 docs...
+Processed 2740000 docs...
+Processed 2750000 docs...
+Processed 2760000 docs...
+Processed 2770000 docs...
+Processed 2780000 docs...
+Processed 2790000 docs...
+Flushed partial index #8 to disk.
+Flushed partial index #9 to disk.
+Processed 2800000 docs...
+Processed 2810000 docs...
+Processed 2820000 docs...
+Processed 2830000 docs...
+Processed 2840000 docs...
+Processed 2850000 docs...
+Processed 2860000 docs...
+Processed 2870000 docs...
+Processed 2880000 docs...
+Processed 2890000 docs...
+Processed 2900000 docs...
+Processed 2910000 docs...
+Processed 2920000 docs...
+Processed 2930000 docs...
+Processed 2940000 docs...
+Processed 2950000 docs...
+Processed 2960000 docs...
+Processed 2970000 docs...
+Processed 2980000 docs...
+Processed 2990000 docs...
+Processed 3000000 docs...
+Processed 3010000 docs...
+Processed 3020000 docs...
+Processed 3030000 docs...
+Processed 3040000 docs...
+Processed 3050000 docs...
+Processed 3060000 docs...
+Processed 3070000 docs...
+Processed 3080000 docs...
+Processed 3090000 docs...
+Processed 3100000 docs...
+Processed 3110000 docs...
+Processed 3120000 docs...
+Processed 3130000 docs...
+Processed 3140000 docs...
+Processed 3150000 docs...
+Processed 3160000 docs...
+Processed 3170000 docs...
+Processed 3180000 docs...
+Processed 3190000 docs...
+Processed 3200000 docs...
+Processed 3210000 docs...
+Processed 3220000 docs...
+Processed 3230000 docs...
+Processed 3240000 docs...
+Processed 3250000 docs...
+Flushed partial index #10 to disk.
+Flushed partial index #11 to disk.
+Flushed partial index #12 to disk.
+Flushed partial index #13 to disk.
+Flushed partial index #14 to disk.
+Flushed partial index #15 to disk.
+Flushed partial index #16 to disk.
+Processed 3260000 docs...
+Flushed partial index #17 to disk.
+Flushed partial index #18 to disk.
+Flushed partial index #19 to disk.
+Flushed partial index #20 to disk.
+Flushed partial index #21 to disk.
+Flushed partial index #22 to disk.
+Flushed partial index #23 to disk.
+Flushed partial index #24 to disk.
+Flushed partial index #25 to disk.
+Flushed partial index #26 to disk.
+Processed 3270000 docs...
+Flushed partial index #27 to disk.
+Flushed partial index #28 to disk.
+Flushed partial index #29 to disk.
+Flushed partial index #30 to disk.
+Flushed partial index #31 to disk.
+Flushed partial index #32 to disk.
+Flushed partial index #33 to disk.
+Flushed partial index #34 to disk.
+Flushed partial index #35 to disk.
+Flushed partial index #36 to disk.
+Processed 3280000 docs...
+Flushed partial index #37 to disk.
+Flushed partial index #38 to disk.
+Flushed partial index #39 to disk.
+Flushed partial index #40 to disk.
+Flushed partial index #41 to disk.
+Flushed partial index #42 to disk.
+Flushed partial index #43 to disk.
+Flushed partial index #44 to disk.
+Flushed partial index #45 to disk.
+Flushed partial index #46 to disk.
+Processed 3290000 docs...
+Flushed partial index #47 to disk.
+Flushed partial index #48 to disk.
+Flushed partial index #49 to disk.
+Flushed partial index #50 to disk.
+Flushed partial index #51 to disk.
+Flushed partial index #52 to disk.
+Flushed partial index #53 to disk.
+Flushed partial index #54 to disk.
+Flushed partial index #55 to disk.
+Flushed partial index #56 to disk.
+Processed 3300000 docs...
+Flushed partial index #57 to disk.
+Flushed partial index #58 to disk.
+Flushed partial index #59 to disk.
+Flushed partial index #60 to disk.
+Flushed partial index #61 to disk.
+Flushed partial index #62 to disk.
+Flushed partial index #63 to disk.
+Flushed partial index #64 to disk.
+Flushed partial index #65 to disk.
+Flushed partial index #66 to disk.
+Processed 3310000 docs...
+Flushed partial index #67 to disk.
+Flushed partial index #68 to disk.
+Flushed partial index #69 to disk.
+Flushed partial index #70 to disk.
+Flushed partial index #71 to disk.
+Flushed partial index #72 to disk.
+Flushed partial index #73 to disk.
+Flushed partial index #74 to disk.
+Flushed partial index #75 to disk.
+Flushed partial index #76 to disk.
+Processed 3320000 docs...
+Flushed partial index #77 to disk.
+Flushed partial index #78 to disk.
+Flushed partial index #79 to disk.
+Flushed partial index #80 to disk.
+Flushed partial index #81 to disk.
+Flushed partial index #82 to disk.
+Flushed partial index #83 to disk.
+Flushed partial index #84 to disk.
+Flushed partial index #85 to disk.
+Flushed partial index #86 to disk.
+Processed 3330000 docs...
+Flushed partial index #87 to disk.
+Flushed partial index #88 to disk.
+Flushed partial index #89 to disk.
+Flushed partial index #90 to disk.
+Flushed partial index #91 to disk.
+Flushed partial index #92 to disk.
+Flushed partial index #93 to disk.
+Flushed partial index #94 to disk.
+Flushed partial index #95 to disk.
+Flushed partial index #96 to disk.
+Processed 3340000 docs...
+Flushed partial index #97 to disk.
+Flushed partial index #98 to disk.
+Flushed partial index #99 to disk.
+Flushed partial index #100 to disk.
+Flushed partial index #101 to disk.
+Flushed partial index #102 to disk.
+Flushed partial index #103 to disk.
+Flushed partial index #104 to disk.
+Flushed partial index #105 to disk.
+Flushed partial index #106 to disk.
+Processed 3350000 docs...
+Flushed partial index #107 to disk.
+Flushed partial index #108 to disk.
+Flushed partial index #109 to disk.
+Flushed partial index #110 to disk.
+Flushed partial index #111 to disk.
+Flushed partial index #112 to disk.
+Flushed partial index #113 to disk.
+Flushed partial index #114 to disk.
+Flushed partial index #115 to disk.
+Flushed partial index #116 to disk.
+Processed 3360000 docs...
+Flushed partial index #117 to disk.
+Flushed partial index #118 to disk.
+Flushed partial index #119 to disk.
+Flushed partial index #120 to disk.
+Flushed partial index #121 to disk.
+Flushed partial index #122 to disk.
+Flushed partial index #123 to disk.
+Flushed partial index #124 to disk.
+Flushed partial index #125 to disk.
+Flushed partial index #126 to disk.
+Processed 3370000 docs...
+Flushed partial index #127 to disk.
+Flushed partial index #128 to disk.
+Flushed partial index #129 to disk.
+Flushed partial index #130 to disk.
+Flushed partial index #131 to disk.
+Flushed partial index #132 to disk.
+Flushed partial index #133 to disk.
+Flushed partial index #134 to disk.
+Flushed partial index #135 to disk.
+Flushed partial index #136 to disk.
+Processed 3380000 docs...
+Flushed partial index #137 to disk.
+Flushed partial index #138 to disk.
+Flushed partial index #139 to disk.
+Flushed partial index #140 to disk.
+Flushed partial index #141 to disk.
+Flushed partial index #142 to disk.
+Flushed partial index #143 to disk.
+Flushed partial index #144 to disk.
+Flushed partial index #145 to disk.
+Flushed partial index #146 to disk.
+Processed 3390000 docs...
+Flushed partial index #147 to disk.
+Flushed partial index #148 to disk.
+Flushed partial index #149 to disk.
+Flushed partial index #150 to disk.
+Flushed partial index #151 to disk.
+Flushed partial index #152 to disk.
+Flushed partial index #153 to disk.
+Flushed partial index #154 to disk.
+Flushed partial index #155 to disk.
+Flushed partial index #156 to disk.
+Processed 3400000 docs...
+Flushed partial index #157 to disk.
+Flushed partial index #158 to disk.
+Flushed partial index #159 to disk.
+Flushed partial index #160 to disk.
+Flushed partial index #161 to disk.
+Flushed partial index #162 to disk.
+Flushed partial index #163 to disk.
+Flushed partial index #164 to disk.
+Flushed partial index #165 to disk.
+Flushed partial index #166 to disk.
+Processed 3410000 docs...
+Flushed partial index #167 to disk.
+Flushed partial index #168 to disk.
+Flushed partial index #169 to disk.
+Flushed partial index #170 to disk.
+Flushed partial index #171 to disk.
+Flushed partial index #172 to disk.
+Flushed partial index #173 to disk.
+Flushed partial index #174 to disk.
+Flushed partial index #175 to disk.
+Flushed partial index #176 to disk.
+Processed 3420000 docs...
+Flushed partial index #177 to disk.
+Flushed partial index #178 to disk.
+Flushed partial index #179 to disk.
+Flushed partial index #180 to disk.
+Flushed partial index #181 to disk.
+Flushed partial index #182 to disk.
+Flushed partial index #183 to disk.
+Flushed partial index #184 to disk.
+Flushed partial index #185 to disk.
+Flushed partial index #186 to disk.
+Processed 3430000 docs...
+Flushed partial index #187 to disk.
+Flushed partial index #188 to disk.
+Flushed partial index #189 to disk.
+Flushed partial index #190 to disk.
+Flushed partial index #191 to disk.
+Flushed partial index #192 to disk.
+Flushed partial index #193 to disk.
+Flushed partial index #194 to disk.
+Flushed partial index #195 to disk.
+Flushed partial index #196 to disk.
+Processed 3440000 docs...
+Flushed partial index #197 to disk.
+Flushed partial index #198 to disk.
+Flushed partial index #199 to disk.
+Flushed partial index #200 to disk.
+Flushed partial index #201 to disk.
+Flushed partial index #202 to disk.
+Flushed partial index #203 to disk.
+Flushed partial index #204 to disk.
+Flushed partial index #205 to disk.
+Flushed partial index #206 to disk.
+Processed 3450000 docs...
+Flushed partial index #207 to disk.
+Flushed partial index #208 to disk.
+Flushed partial index #209 to disk.
+Flushed partial index #210 to disk.
+Flushed partial index #211 to disk.
+Flushed partial index #212 to disk.
+Flushed partial index #213 to disk.
+Flushed partial index #214 to disk.
+Flushed partial index #215 to disk.
+Flushed partial index #216 to disk.
+Processed 3460000 docs...
+Flushed partial index #217 to disk.
+Flushed partial index #218 to disk.
+Flushed partial index #219 to disk.
+Flushed partial index #220 to disk.
+Flushed partial index #221 to disk.
+Flushed partial index #222 to disk.
+Flushed partial index #223 to disk.
+Flushed partial index #224 to disk.
+Flushed partial index #225 to disk.
+Flushed partial index #226 to disk.
+Processed 3470000 docs...
+Flushed partial index #227 to disk.
+Flushed partial index #228 to disk.
+Flushed partial index #229 to disk.
+Flushed partial index #230 to disk.
+Flushed partial index #231 to disk.
+Flushed partial index #232 to disk.
+Flushed partial index #233 to disk.
+Flushed partial index #234 to disk.
+Flushed partial index #235 to disk.
+Flushed partial index #236 to disk.
+Processed 3480000 docs...
+Flushed partial index #237 to disk.
+Flushed partial index #238 to disk.
+Flushed partial index #239 to disk.
+Flushed partial index #240 to disk.
+Flushed partial index #241 to disk.
+Flushed partial index #242 to disk.
+Flushed partial index #243 to disk.
+Flushed partial index #244 to disk.
+Flushed partial index #245 to disk.
+Flushed partial index #246 to disk.
+Processed 3490000 docs...
+Flushed partial index #247 to disk.
+Flushed partial index #248 to disk.
+Flushed partial index #249 to disk.
+Flushed partial index #250 to disk.
+Flushed partial index #251 to disk.
+Flushed partial index #252 to disk.
+Flushed partial index #253 to disk.
+Flushed partial index #254 to disk.
+Flushed partial index #255 to disk.
+Flushed partial index #256 to disk.
+Processed 3500000 docs...
+Flushed partial index #257 to disk.
+Flushed partial index #258 to disk.
+Flushed partial index #259 to disk.
+Flushed partial index #260 to disk.
+Flushed partial index #261 to disk.
+Flushed partial index #262 to disk.
+Flushed partial index #263 to disk.
+Flushed partial index #264 to disk.
+Flushed partial index #265 to disk.
+Flushed partial index #266 to disk.
+Processed 3510000 docs...
+Flushed partial index #267 to disk.
+Flushed partial index #268 to disk.
+Flushed partial index #269 to disk.
+Flushed partial index #270 to disk.
+Flushed partial index #271 to disk.
+Flushed partial index #272 to disk.
+Flushed partial index #273 to disk.
+Flushed partial index #274 to disk.
+Flushed partial index #275 to disk.
+Flushed partial index #276 to disk.
+Processed 3520000 docs...
+Flushed partial index #277 to disk.
+Flushed partial index #278 to disk.
+Flushed partial index #279 to disk.
+Flushed partial index #280 to disk.
+Flushed partial index #281 to disk.
+Flushed partial index #282 to disk.
+Flushed partial index #283 to disk.
+Flushed partial index #284 to disk.
+Flushed partial index #285 to disk.
+Flushed partial index #286 to disk.
+Processed 3530000 docs...
+Flushed partial index #287 to disk.
+Flushed partial index #288 to disk.
+Flushed partial index #289 to disk.
+Flushed partial index #290 to disk.
+Flushed partial index #291 to disk.
+Flushed partial index #292 to disk.
+Flushed partial index #293 to disk.
+Flushed partial index #294 to disk.
+Flushed partial index #295 to disk.
+Flushed partial index #296 to disk.
+Processed 3540000 docs...
+Flushed partial index #297 to disk.
+Flushed partial index #298 to disk.
+Flushed partial index #299 to disk.
+Flushed partial index #300 to disk.
+Flushed partial index #301 to disk.
+Flushed partial index #302 to disk.
+Flushed partial index #303 to disk.
+Flushed partial index #304 to disk.
+Flushed partial index #305 to disk.
+Flushed partial index #306 to disk.
+Processed 3550000 docs...
+Flushed partial index #307 to disk.
+Flushed partial index #308 to disk.
+Flushed partial index #309 to disk.
+Flushed partial index #310 to disk.
+Flushed partial index #311 to disk.
+Flushed partial index #312 to disk.
+Flushed partial index #313 to disk.
+Flushed partial index #314 to disk.
+Flushed partial index #315 to disk.
+Flushed partial index #316 to disk.
+Processed 3560000 docs...
+Flushed partial index #317 to disk.
+Flushed partial index #318 to disk.
+Flushed partial index #319 to disk.
+Flushed partial index #320 to disk.
+Flushed partial index #321 to disk.
+Flushed partial index #322 to disk.
+Flushed partial index #323 to disk.
+Flushed partial index #324 to disk.
+Flushed partial index #325 to disk.
+Flushed partial index #326 to disk.
+Processed 3570000 docs...
+Flushed partial index #327 to disk.
+Flushed partial index #328 to disk.
+Flushed partial index #329 to disk.
+Flushed partial index #330 to disk.
+Flushed partial index #331 to disk.
+Flushed partial index #332 to disk.
+Flushed partial index #333 to disk.
+Flushed partial index #334 to disk.
+Flushed partial index #335 to disk.
+Flushed partial index #336 to disk.
+Processed 3580000 docs...
+Flushed partial index #337 to disk.
+Flushed partial index #338 to disk.
+Flushed partial index #339 to disk.
+Flushed partial index #340 to disk.
+Flushed partial index #341 to disk.
+Flushed partial index #342 to disk.
+Flushed partial index #343 to disk.
+Flushed partial index #344 to disk.
+Flushed partial index #345 to disk.
+Flushed partial index #346 to disk.
+Processed 3590000 docs...
+Flushed partial index #347 to disk.
+Flushed partial index #348 to disk.
+Flushed partial index #349 to disk.
+Flushed partial index #350 to disk.
+Flushed partial index #351 to disk.
+Flushed partial index #352 to disk.
+Flushed partial index #353 to disk.
+Flushed partial index #354 to disk.
+Flushed partial index #355 to disk.
+Flushed partial index #356 to disk.
+Processed 3600000 docs...
+Flushed partial index #357 to disk.
+Flushed partial index #358 to disk.
+Flushed partial index #359 to disk.
+Flushed partial index #360 to disk.
+Flushed partial index #361 to disk.
+Flushed partial index #362 to disk.
+Flushed partial index #363 to disk.
+Flushed partial index #364 to disk.
+Flushed partial index #365 to disk.
+Flushed partial index #366 to disk.
+Processed 3610000 docs...
+Flushed partial index #367 to disk.
+Flushed partial index #368 to disk.
+Flushed partial index #369 to disk.
+Flushed partial index #370 to disk.
+Flushed partial index #371 to disk.
+Flushed partial index #372 to disk.
+Flushed partial index #373 to disk.
+Flushed partial index #374 to disk.
+Flushed partial index #375 to disk.
+Flushed partial index #376 to disk.
+Processed 3620000 docs...
+Flushed partial index #377 to disk.
+Flushed partial index #378 to disk.
+Flushed partial index #379 to disk.
+Flushed partial index #380 to disk.
+Flushed partial index #381 to disk.
+Flushed partial index #382 to disk.
+Flushed partial index #383 to disk.
+Flushed partial index #384 to disk.
+Flushed partial index #385 to disk.
+Flushed partial index #386 to disk.
+Processed 3630000 docs...
+Flushed partial index #387 to disk.
+Flushed partial index #388 to disk.
+Flushed partial index #389 to disk.
+Flushed partial index #390 to disk.
+Flushed partial index #391 to disk.
+Flushed partial index #392 to disk.
+Flushed partial index #393 to disk.
+Flushed partial index #394 to disk.
+Flushed partial index #395 to disk.
+Flushed partial index #396 to disk.
+Processed 3640000 docs...
+Flushed partial index #397 to disk.
+Flushed partial index #398 to disk.
+Flushed partial index #399 to disk.
+Flushed partial index #400 to disk.
+Flushed partial index #401 to disk.
+Flushed partial index #402 to disk.
+Flushed partial index #403 to disk.
+Flushed partial index #404 to disk.
+Flushed partial index #405 to disk.
+Flushed partial index #406 to disk.
+Processed 3650000 docs...
+Flushed partial index #407 to disk.
+Flushed partial index #408 to disk.
+Flushed partial index #409 to disk.
+Flushed partial index #410 to disk.
+Flushed partial index #411 to disk.
+Flushed partial index #412 to disk.
+Flushed partial index #413 to disk.
+Flushed partial index #414 to disk.
+Flushed partial index #415 to disk.
+Flushed partial index #416 to disk.
+Processed 3660000 docs...
+Flushed partial index #417 to disk.
+Flushed partial index #418 to disk.
+Flushed partial index #419 to disk.
+Flushed partial index #420 to disk.
+Flushed partial index #421 to disk.
+Flushed partial index #422 to disk.
+Flushed partial index #423 to disk.
+Flushed partial index #424 to disk.
+Flushed partial index #425 to disk.
+Flushed partial index #426 to disk.
+Processed 3670000 docs...
+Flushed partial index #427 to disk.
+Flushed partial index #428 to disk.
+Flushed partial index #429 to disk.
+Flushed partial index #430 to disk.
+Flushed partial index #431 to disk.
+Flushed partial index #432 to disk.
+Flushed partial index #433 to disk.
+Flushed partial index #434 to disk.
+Flushed partial index #435 to disk.
+Flushed partial index #436 to disk.
+Processed 3680000 docs...
+Flushed partial index #437 to disk.
+Flushed partial index #438 to disk.
+Flushed partial index #439 to disk.
+Flushed partial index #440 to disk.
+Flushed partial index #441 to disk.
+Flushed partial index #442 to disk.
+Flushed partial index #443 to disk.
+Flushed partial index #444 to disk.
+Flushed partial index #445 to disk.
+Flushed partial index #446 to disk.
+Processed 3690000 docs...
+Flushed partial index #447 to disk.
+Flushed partial index #448 to disk.
+Flushed partial index #449 to disk.
+Flushed partial index #450 to disk.
+Flushed partial index #451 to disk.
+Flushed partial index #452 to disk.
+Flushed partial index #453 to disk.
+Flushed partial index #454 to disk.
+Flushed partial index #455 to disk.
+Flushed partial index #456 to disk.
+Processed 3700000 docs...
+Flushed partial index #457 to disk.
+Flushed partial index #458 to disk.
+Flushed partial index #459 to disk.
+Flushed partial index #460 to disk.
+Flushed partial index #461 to disk.
+Flushed partial index #462 to disk.
+Flushed partial index #463 to disk.
+Flushed partial index #464 to disk.
+Flushed partial index #465 to disk.
+Flushed partial index #466 to disk.
+Processed 3710000 docs...
+Flushed partial index #467 to disk.
+Flushed partial index #468 to disk.
+Flushed partial index #469 to disk.
+Flushed partial index #470 to disk.
+Flushed partial index #471 to disk.
+Flushed partial index #472 to disk.
+Flushed partial index #473 to disk.
+Flushed partial index #474 to disk.
+Flushed partial index #475 to disk.
+Flushed partial index #476 to disk.
+Processed 3720000 docs...
+Flushed partial index #477 to disk.
+Flushed partial index #478 to disk.
+Flushed partial index #479 to disk.
+Flushed partial index #480 to disk.
+Flushed partial index #481 to disk.
+Flushed partial index #482 to disk.
+Flushed partial index #483 to disk.
+Flushed partial index #484 to disk.
+Flushed partial index #485 to disk.
+Flushed partial index #486 to disk.
+Processed 3730000 docs...
+Flushed partial index #487 to disk.
+Flushed partial index #488 to disk.
+Flushed partial index #489 to disk.
+Flushed partial index #490 to disk.
+Flushed partial index #491 to disk.
+Flushed partial index #492 to disk.
+Flushed partial index #493 to disk.
+Flushed partial index #494 to disk.
+Flushed partial index #495 to disk.
+Flushed partial index #496 to disk.
+Processed 3740000 docs...
+Flushed partial index #497 to disk.
+Flushed partial index #498 to disk.
+Flushed partial index #499 to disk.
+Flushed partial index #500 to disk.
+Flushed partial index #501 to disk.
+Flushed partial index #502 to disk.
+Flushed partial index #503 to disk.
+Flushed partial index #504 to disk.
+Flushed partial index #505 to disk.
+Flushed partial index #506 to disk.
+Processed 3750000 docs...
+Flushed partial index #507 to disk.
+Flushed partial index #508 to disk.
+Flushed partial index #509 to disk.
+Flushed partial index #510 to disk.
+Flushed partial index #511 to disk.
+Flushed partial index #512 to disk.
+Flushed partial index #513 to disk.
+Flushed partial index #514 to disk.
+Flushed partial index #515 to disk.
+Flushed partial index #516 to disk.
+Processed 3760000 docs...
+Flushed partial index #517 to disk.
+Flushed partial index #518 to disk.
+Flushed partial index #519 to disk.
+Flushed partial index #520 to disk.
+Flushed partial index #521 to disk.
+Flushed partial index #522 to disk.
+Flushed partial index #523 to disk.
+Flushed partial index #524 to disk.
+Flushed partial index #525 to disk.
+Flushed partial index #526 to disk.
+Processed 3770000 docs...
+Flushed partial index #527 to disk.
+Flushed partial index #528 to disk.
+Flushed partial index #529 to disk.
+Flushed partial index #530 to disk.
+Flushed partial index #531 to disk.
+Flushed partial index #532 to disk.
+Flushed partial index #533 to disk.
+Flushed partial index #534 to disk.
+Flushed partial index #535 to disk.
+Flushed partial index #536 to disk.
+Processed 3780000 docs...
+Flushed partial index #537 to disk.
+Flushed partial index #538 to disk.
+Flushed partial index #539 to disk.
+Flushed partial index #540 to disk.
+Flushed partial index #541 to disk.
+Flushed partial index #542 to disk.
+Flushed partial index #543 to disk.
+Flushed partial index #544 to disk.
+Flushed partial index #545 to disk.
+Flushed partial index #546 to disk.
+Processed 3790000 docs...
+Flushed partial index #547 to disk.
+Flushed partial index #548 to disk.
+Flushed partial index #549 to disk.
+Flushed partial index #550 to disk.
+Flushed partial index #551 to disk.
+Flushed partial index #552 to disk.
+Flushed partial index #553 to disk.
+Flushed partial index #554 to disk.
+Flushed partial index #555 to disk.
+Flushed partial index #556 to disk.
+Processed 3800000 docs...
+Flushed partial index #557 to disk.
+Flushed partial index #558 to disk.
+Flushed partial index #559 to disk.
+Flushed partial index #560 to disk.
+Flushed partial index #561 to disk.
+Flushed partial index #562 to disk.
+Flushed partial index #563 to disk.
+Flushed partial index #564 to disk.
+Flushed partial index #565 to disk.
+Flushed partial index #566 to disk.
+Processed 3810000 docs...
+Flushed partial index #567 to disk.
+Flushed partial index #568 to disk.
+Flushed partial index #569 to disk.
+Flushed partial index #570 to disk.
+Flushed partial index #571 to disk.
+Flushed partial index #572 to disk.
+Flushed partial index #573 to disk.
+Flushed partial index #574 to disk.
+Flushed partial index #575 to disk.
+Flushed partial index #576 to disk.
+Processed 3820000 docs...
+Flushed partial index #577 to disk.
+Flushed partial index #578 to disk.
+Flushed partial index #579 to disk.
+Flushed partial index #580 to disk.
+Flushed partial index #581 to disk.
+Flushed partial index #582 to disk.
+Flushed partial index #583 to disk.
+Flushed partial index #584 to disk.
+Flushed partial index #585 to disk.
+Flushed partial index #586 to disk.
+Processed 3830000 docs...
+Flushed partial index #587 to disk.
+Flushed partial index #588 to disk.
+Flushed partial index #589 to disk.
+Flushed partial index #590 to disk.
+Flushed partial index #591 to disk.
+Flushed partial index #592 to disk.
+Flushed partial index #593 to disk.
+Flushed partial index #594 to disk.
+Flushed partial index #595 to disk.
+Flushed partial index #596 to disk.
+Processed 3840000 docs...
+Flushed partial index #597 to disk.
+Flushed partial index #598 to disk.
+Flushed partial index #599 to disk.
+Flushed partial index #600 to disk.
+Flushed partial index #601 to disk.
+Flushed partial index #602 to disk.
+Flushed partial index #603 to disk.
+Flushed partial index #604 to disk.
+Flushed partial index #605 to disk.
+Flushed partial index #606 to disk.
+Processed 3850000 docs...
+Flushed partial index #607 to disk.
+Flushed partial index #608 to disk.
+Flushed partial index #609 to disk.
+Flushed partial index #610 to disk.
+Flushed partial index #611 to disk.
+Flushed partial index #612 to disk.
+Flushed partial index #613 to disk.
+Flushed partial index #614 to disk.
+Flushed partial index #615 to disk.
+Flushed partial index #616 to disk.
+Processed 3860000 docs...
+Flushed partial index #617 to disk.
+Flushed partial index #618 to disk.
+Flushed partial index #619 to disk.
+Flushed partial index #620 to disk.
+Flushed partial index #621 to disk.
+Flushed partial index #622 to disk.
+Flushed partial index #623 to disk.
+Flushed partial index #624 to disk.
+Flushed partial index #625 to disk.
+Flushed partial index #626 to disk.
+Processed 3870000 docs...
+Flushed partial index #627 to disk.
+Flushed partial index #628 to disk.
+Flushed partial index #629 to disk.
+Flushed partial index #630 to disk.
+Flushed partial index #631 to disk.
+Flushed partial index #632 to disk.
+Flushed partial index #633 to disk.
+Flushed partial index #634 to disk.
+Flushed partial index #635 to disk.
+Flushed partial index #636 to disk.
+Processed 3880000 docs...
+Flushed partial index #637 to disk.
+Flushed partial index #638 to disk.
+Flushed partial index #639 to disk.
+Flushed partial index #640 to disk.
+Flushed partial index #641 to disk.
+Flushed partial index #642 to disk.
+Flushed partial index #643 to disk.
+Flushed partial index #644 to disk.
+Flushed partial index #645 to disk.
+Flushed partial index #646 to disk.
+Processed 3890000 docs...
+Flushed partial index #647 to disk.
+Flushed partial index #648 to disk.
+Flushed partial index #649 to disk.
+Flushed partial index #650 to disk.
+Flushed partial index #651 to disk.
+Flushed partial index #652 to disk.
+Flushed partial index #653 to disk.
+Flushed partial index #654 to disk.
+Flushed partial index #655 to disk.
+Flushed partial index #656 to disk.
+Processed 3900000 docs...
+Flushed partial index #657 to disk.
+Flushed partial index #658 to disk.
+Flushed partial index #659 to disk.
+Flushed partial index #660 to disk.
+Flushed partial index #661 to disk.
+Flushed partial index #662 to disk.
+Flushed partial index #663 to disk.
+Flushed partial index #664 to disk.
+Flushed partial index #665 to disk.
+Flushed partial index #666 to disk.
+Processed 3910000 docs...
+Flushed partial index #667 to disk.
+Flushed partial index #668 to disk.
+Flushed partial index #669 to disk.
+Flushed partial index #670 to disk.
+Flushed partial index #671 to disk.
+Flushed partial index #672 to disk.
+Flushed partial index #673 to disk.
+Flushed partial index #674 to disk.
+Flushed partial index #675 to disk.
+Flushed partial index #676 to disk.
+Processed 3920000 docs...
+Flushed partial index #677 to disk.
+Flushed partial index #678 to disk.
+Flushed partial index #679 to disk.
+Flushed partial index #680 to disk.
+Flushed partial index #681 to disk.
+Flushed partial index #682 to disk.
+Flushed partial index #683 to disk.
+Flushed partial index #684 to disk.
+Flushed partial index #685 to disk.
+Flushed partial index #686 to disk.
+Processed 3930000 docs...
+Flushed partial index #687 to disk.
+Flushed partial index #688 to disk.
+Flushed partial index #689 to disk.
+Flushed partial index #690 to disk.
+Flushed partial index #691 to disk.
+Flushed partial index #692 to disk.
+Flushed partial index #693 to disk.
+Flushed partial index #694 to disk.
+Flushed partial index #695 to disk.
+Flushed partial index #696 to disk.
+Processed 3940000 docs...
+Flushed partial index #697 to disk.
+Flushed partial index #698 to disk.
+Flushed partial index #699 to disk.
+Flushed partial index #700 to disk.
+Flushed partial index #701 to disk.
+Flushed partial index #702 to disk.
+Flushed partial index #703 to disk.
+Flushed partial index #704 to disk.
+Flushed partial index #705 to disk.
+Flushed partial index #706 to disk.
+Processed 3950000 docs...
+Flushed partial index #707 to disk.
+Flushed partial index #708 to disk.
+Flushed partial index #709 to disk.
+Flushed partial index #710 to disk.
+Flushed partial index #711 to disk.
+Flushed partial index #712 to disk.
+Flushed partial index #713 to disk.
+Flushed partial index #714 to disk.
+Flushed partial index #715 to disk.
+Flushed partial index #716 to disk.
+Processed 3960000 docs...
+Flushed partial index #717 to disk.
+Flushed partial index #718 to disk.
+Flushed partial index #719 to disk.
+Flushed partial index #720 to disk.
+Flushed partial index #721 to disk.
+Flushed partial index #722 to disk.
+Flushed partial index #723 to disk.
+Flushed partial index #724 to disk.
+Flushed partial index #725 to disk.
+Flushed partial index #726 to disk.
+Processed 3970000 docs...
+Flushed partial index #727 to disk.
+Flushed partial index #728 to disk.
+Flushed partial index #729 to disk.
+Flushed partial index #730 to disk.
+Flushed partial index #731 to disk.
+Flushed partial index #732 to disk.
+Flushed partial index #733 to disk.
+Flushed partial index #734 to disk.
+Flushed partial index #735 to disk.
+Flushed partial index #736 to disk.
+Processed 3980000 docs...
+Flushed partial index #737 to disk.
+Flushed partial index #738 to disk.
+Flushed partial index #739 to disk.
+Flushed partial index #740 to disk.
+Flushed partial index #741 to disk.
+Flushed partial index #742 to disk.
+Flushed partial index #743 to disk.
+Flushed partial index #744 to disk.
+Flushed partial index #745 to disk.
+Flushed partial index #746 to disk.
+Processed 3990000 docs...
+Flushed partial index #747 to disk.
+Flushed partial index #748 to disk.
+Flushed partial index #749 to disk.
+Flushed partial index #750 to disk.
+Flushed partial index #751 to disk.
+Flushed partial index #752 to disk.
+Flushed partial index #753 to disk.
+Flushed partial index #754 to disk.
+Flushed partial index #755 to disk.
+Flushed partial index #756 to disk.
+Processed 4000000 docs...
+Flushed partial index #757 to disk.
+Flushed partial index #758 to disk.
+Flushed partial index #759 to disk.
+Flushed partial index #760 to disk.
+Flushed partial index #761 to disk.
+Flushed partial index #762 to disk.
+Flushed partial index #763 to disk.
+Flushed partial index #764 to disk.
+Flushed partial index #765 to disk.
+Flushed partial index #766 to disk.
+Processed 4010000 docs...
+Flushed partial index #767 to disk.
+Flushed partial index #768 to disk.
+Flushed partial index #769 to disk.
+Flushed partial index #770 to disk.
+Flushed partial index #771 to disk.
+Flushed partial index #772 to disk.
+Flushed partial index #773 to disk.
+Flushed partial index #774 to disk.
+Flushed partial index #775 to disk.
+Flushed partial index #776 to disk.
+Processed 4020000 docs...
+Flushed partial index #777 to disk.
+Flushed partial index #778 to disk.
+Flushed partial index #779 to disk.
+Flushed partial index #780 to disk.
+Flushed partial index #781 to disk.
+Flushed partial index #782 to disk.
+Flushed partial index #783 to disk.
+Flushed partial index #784 to disk.
+Flushed partial index #785 to disk.
+Flushed partial index #786 to disk.
+Processed 4030000 docs...
+Flushed partial index #787 to disk.
+Flushed partial index #788 to disk.
+Flushed partial index #789 to disk.
+Flushed partial index #790 to disk.
+Flushed partial index #791 to disk.
+Flushed partial index #792 to disk.
+Flushed partial index #793 to disk.
+Flushed partial index #794 to disk.
+Flushed partial index #795 to disk.
+Flushed partial index #796 to disk.
+Processed 4040000 docs...
+Flushed partial index #797 to disk.
+Flushed partial index #798 to disk.
+Flushed partial index #799 to disk.
+Flushed partial index #800 to disk.
+Flushed partial index #801 to disk.
+Flushed partial index #802 to disk.
+Flushed partial index #803 to disk.
+Flushed partial index #804 to disk.
+Flushed partial index #805 to disk.
+Flushed partial index #806 to disk.
+Processed 4050000 docs...
+Flushed partial index #807 to disk.
+Flushed partial index #808 to disk.
+Flushed partial index #809 to disk.
+Flushed partial index #810 to disk.
+Flushed partial index #811 to disk.
+Flushed partial index #812 to disk.
+Flushed partial index #813 to disk.
+Flushed partial index #814 to disk.
+Flushed partial index #815 to disk.
+Flushed partial index #816 to disk.
+Processed 4060000 docs...
+Flushed partial index #817 to disk.
+Flushed partial index #818 to disk.
+Flushed partial index #819 to disk.
+Flushed partial index #820 to disk.
+Flushed partial index #821 to disk.
+Flushed partial index #822 to disk.
+Flushed partial index #823 to disk.
+Flushed partial index #824 to disk.
+Flushed partial index #825 to disk.
+Flushed partial index #826 to disk.
+Processed 4070000 docs...
+Flushed partial index #827 to disk.
+Flushed partial index #828 to disk.
+Flushed partial index #829 to disk.
+Flushed partial index #830 to disk.
+Flushed partial index #831 to disk.
+Flushed partial index #832 to disk.
+Flushed partial index #833 to disk.
+Flushed partial index #834 to disk.
+Flushed partial index #835 to disk.
+Flushed partial index #836 to disk.
+Processed 4080000 docs...
+Flushed partial index #837 to disk.
+Flushed partial index #838 to disk.
+Flushed partial index #839 to disk.
+Flushed partial index #840 to disk.
+Flushed partial index #841 to disk.
+Flushed partial index #842 to disk.
+Flushed partial index #843 to disk.
+Flushed partial index #844 to disk.
+Flushed partial index #845 to disk.
+Flushed partial index #846 to disk.
+Processed 4090000 docs...
+Flushed partial index #847 to disk.
+Flushed partial index #848 to disk.
+Flushed partial index #849 to disk.
+Flushed partial index #850 to disk.
+Flushed partial index #851 to disk.
+Flushed partial index #852 to disk.
+Flushed partial index #853 to disk.
+Flushed partial index #854 to disk.
+Flushed partial index #855 to disk.
+Flushed partial index #856 to disk.
+Processed 4100000 docs...
+Flushed partial index #857 to disk.
+Flushed partial index #858 to disk.
+Flushed partial index #859 to disk.
+Flushed partial index #860 to disk.
+Flushed partial index #861 to disk.
+Flushed partial index #862 to disk.
+Flushed partial index #863 to disk.
+Flushed partial index #864 to disk.
+Flushed partial index #865 to disk.
+Flushed partial index #866 to disk.
+Processed 4110000 docs...
+Flushed partial index #867 to disk.
+Flushed partial index #868 to disk.
+Flushed partial index #869 to disk.
+Flushed partial index #870 to disk.
+Flushed partial index #871 to disk.
+Flushed partial index #872 to disk.
+Flushed partial index #873 to disk.
+Flushed partial index #874 to disk.
+Flushed partial index #875 to disk.
+Flushed partial index #876 to disk.
+Processed 4120000 docs...
+Flushed partial index #877 to disk.
+Flushed partial index #878 to disk.
+Flushed partial index #879 to disk.
+Flushed partial index #880 to disk.
+Flushed partial index #881 to disk.
+Flushed partial index #882 to disk.
+Flushed partial index #883 to disk.
+Flushed partial index #884 to disk.
+Flushed partial index #885 to disk.
+Flushed partial index #886 to disk.
+Processed 4130000 docs...
+Flushed partial index #887 to disk.
+Flushed partial index #888 to disk.
+Flushed partial index #889 to disk.
+Flushed partial index #890 to disk.
+Flushed partial index #891 to disk.
+Flushed partial index #892 to disk.
+Flushed partial index #893 to disk.
+Flushed partial index #894 to disk.
+Flushed partial index #895 to disk.
+Flushed partial index #896 to disk.
+Processed 4140000 docs...
+Flushed partial index #897 to disk.
+Flushed partial index #898 to disk.
+Flushed partial index #899 to disk.
+Flushed partial index #900 to disk.
+Flushed partial index #901 to disk.
+Flushed partial index #902 to disk.
+Flushed partial index #903 to disk.
+Flushed partial index #904 to disk.
+Flushed partial index #905 to disk.
+Flushed partial index #906 to disk.
+Processed 4150000 docs...
+Flushed partial index #907 to disk.
+Flushed partial index #908 to disk.
+Flushed partial index #909 to disk.
+Flushed partial index #910 to disk.
+Flushed partial index #911 to disk.
+Flushed partial index #912 to disk.
+Flushed partial index #913 to disk.
+Flushed partial index #914 to disk.
+Flushed partial index #915 to disk.
+Flushed partial index #916 to disk.
+Processed 4160000 docs...
+Flushed partial index #917 to disk.
+Flushed partial index #918 to disk.
+Flushed partial index #919 to disk.
+Flushed partial index #920 to disk.
+Flushed partial index #921 to disk.
+Flushed partial index #922 to disk.
+Flushed partial index #923 to disk.
+Flushed partial index #924 to disk.
+Flushed partial index #925 to disk.
+Flushed partial index #926 to disk.
+Processed 4170000 docs...
+Flushed partial index #927 to disk.
+Flushed partial index #928 to disk.
+Flushed partial index #929 to disk.
+Flushed partial index #930 to disk.
+Flushed partial index #931 to disk.
+Flushed partial index #932 to disk.
+Flushed partial index #933 to disk.
+Flushed partial index #934 to disk.
+Flushed partial index #935 to disk.
+Flushed partial index #936 to disk.
+Processed 4180000 docs...
+Flushed partial index #937 to disk.
+Flushed partial index #938 to disk.
+Flushed partial index #939 to disk.
+Flushed partial index #940 to disk.
+Flushed partial index #941 to disk.
+Flushed partial index #942 to disk.
+Flushed partial index #943 to disk.
+Flushed partial index #944 to disk.
+Flushed partial index #945 to disk.
+Flushed partial index #946 to disk.
+Processed 4190000 docs...
+Flushed partial index #947 to disk.
+Flushed partial index #948 to disk.
+Flushed partial index #949 to disk.
+Flushed partial index #950 to disk.
+Flushed partial index #951 to disk.
+Flushed partial index #952 to disk.
+Flushed partial index #953 to disk.
+Flushed partial index #954 to disk.
+Flushed partial index #955 to disk.
+Flushed partial index #956 to disk.
+Processed 4200000 docs...
+Flushed partial index #957 to disk.
+Flushed partial index #958 to disk.
+Flushed partial index #959 to disk.
+Flushed partial index #960 to disk.
+Flushed partial index #961 to disk.
+Flushed partial index #962 to disk.
+Flushed partial index #963 to disk.
+Flushed partial index #964 to disk.
+Flushed partial index #965 to disk.
+Flushed partial index #966 to disk.
+Processed 4210000 docs...
+Flushed partial index #967 to disk.
+Flushed partial index #968 to disk.
+Flushed partial index #969 to disk.
+Flushed partial index #970 to disk.
+Flushed partial index #971 to disk.
+Flushed partial index #972 to disk.
+Flushed partial index #973 to disk.
+Flushed partial index #974 to disk.
+Flushed partial index #975 to disk.
+Flushed partial index #976 to disk.
+Processed 4220000 docs...
+Flushed partial index #977 to disk.
+Flushed partial index #978 to disk.
+Flushed partial index #979 to disk.
+Flushed partial index #980 to disk.
+Flushed partial index #981 to disk.
+Flushed partial index #982 to disk.
+Flushed partial index #983 to disk.
+Flushed partial index #984 to disk.
+Flushed partial index #985 to disk.
+Flushed partial index #986 to disk.
+Processed 4230000 docs...
+Flushed partial index #987 to disk.
+Flushed partial index #988 to disk.
+Flushed partial index #989 to disk.
+Flushed partial index #990 to disk.
+Flushed partial index #991 to disk.
+Flushed partial index #992 to disk.
+Flushed partial index #993 to disk.
+Flushed partial index #994 to disk.
+Flushed partial index #995 to disk.
+Flushed partial index #996 to disk.
+Processed 4240000 docs...
+Flushed partial index #997 to disk.
+Flushed partial index #998 to disk.
+Flushed partial index #999 to disk.
+Flushed partial index #1000 to disk.
+Flushed partial index #1001 to disk.
+Flushed partial index #1002 to disk.
+Flushed partial index #1003 to disk.
+Flushed partial index #1004 to disk.
+Flushed partial index #1005 to disk.
+Flushed partial index #1006 to disk.
+Processed 4250000 docs...
+Flushed partial index #1007 to disk.
+Flushed partial index #1008 to disk.
+Flushed partial index #1009 to disk.
+Flushed partial index #1010 to disk.
+Flushed partial index #1011 to disk.
+Flushed partial index #1012 to disk.
+Flushed partial index #1013 to disk.
+Flushed partial index #1014 to disk.
+Flushed partial index #1015 to disk.
+Flushed partial index #1016 to disk.
+Processed 4260000 docs...
+Flushed partial index #1017 to disk.
+Flushed partial index #1018 to disk.
+Flushed partial index #1019 to disk.
+Flushed partial index #1020 to disk.
+Flushed partial index #1021 to disk.
+Flushed partial index #1022 to disk.
+Flushed partial index #1023 to disk.
+Flushed partial index #1024 to disk.
+Flushed partial index #1025 to disk.
+Flushed partial index #1026 to disk.
+Processed 4270000 docs...
+Flushed partial index #1027 to disk.
+Flushed partial index #1028 to disk.
+Flushed partial index #1029 to disk.
+Flushed partial index #1030 to disk.
+Flushed partial index #1031 to disk.
+Flushed partial index #1032 to disk.
+Flushed partial index #1033 to disk.
+Flushed partial index #1034 to disk.
+Flushed partial index #1035 to disk.
+Flushed partial index #1036 to disk.
+Processed 4280000 docs...
+Flushed partial index #1037 to disk.
+Flushed partial index #1038 to disk.
+Flushed partial index #1039 to disk.
+Flushed partial index #1040 to disk.
+Flushed partial index #1041 to disk.
+Flushed partial index #1042 to disk.
+Flushed partial index #1043 to disk.
+Flushed partial index #1044 to disk.
+Flushed partial index #1045 to disk.
+Flushed partial index #1046 to disk.
+Processed 4290000 docs...
+Flushed partial index #1047 to disk.
+Flushed partial index #1048 to disk.
+Flushed partial index #1049 to disk.
+Flushed partial index #1050 to disk.
+Flushed partial index #1051 to disk.
+Flushed partial index #1052 to disk.
+Flushed partial index #1053 to disk.
+Flushed partial index #1054 to disk.
+Flushed partial index #1055 to disk.
+Flushed partial index #1056 to disk.
+Processed 4300000 docs...
+Flushed partial index #1057 to disk.
+Flushed partial index #1058 to disk.
+Flushed partial index #1059 to disk.
+Flushed partial index #1060 to disk.
+Flushed partial index #1061 to disk.
+Flushed partial index #1062 to disk.
+Flushed partial index #1063 to disk.
+Flushed partial index #1064 to disk.
+Flushed partial index #1065 to disk.
+Flushed partial index #1066 to disk.
+Processed 4310000 docs...
+Flushed partial index #1067 to disk.
+Flushed partial index #1068 to disk.
+Flushed partial index #1069 to disk.
+Flushed partial index #1070 to disk.
+Flushed partial index #1071 to disk.
+Flushed partial index #1072 to disk.
+Flushed partial index #1073 to disk.
+Flushed partial index #1074 to disk.
+Flushed partial index #1075 to disk.
+Flushed partial index #1076 to disk.
+Processed 4320000 docs...
+Flushed partial index #1077 to disk.
+Flushed partial index #1078 to disk.
+Flushed partial index #1079 to disk.
+Flushed partial index #1080 to disk.
+Flushed partial index #1081 to disk.
+Flushed partial index #1082 to disk.
+Flushed partial index #1083 to disk.
+Flushed partial index #1084 to disk.
+Flushed partial index #1085 to disk.
+Flushed partial index #1086 to disk.
+Processed 4330000 docs...
+Flushed partial index #1087 to disk.
+Flushed partial index #1088 to disk.
+Flushed partial index #1089 to disk.
+Flushed partial index #1090 to disk.
+Flushed partial index #1091 to disk.
+Flushed partial index #1092 to disk.
+Flushed partial index #1093 to disk.
+Flushed partial index #1094 to disk.
+Flushed partial index #1095 to disk.
+Flushed partial index #1096 to disk.
+Processed 4340000 docs...
+Flushed partial index #1097 to disk.
+Flushed partial index #1098 to disk.
+Flushed partial index #1099 to disk.
+Flushed partial index #1100 to disk.
+Flushed partial index #1101 to disk.
+Flushed partial index #1102 to disk.
+Flushed partial index #1103 to disk.
+Flushed partial index #1104 to disk.
+Flushed partial index #1105 to disk.
+Flushed partial index #1106 to disk.
+Processed 4350000 docs...
+Flushed partial index #1107 to disk.
+Flushed partial index #1108 to disk.
+Flushed partial index #1109 to disk.
+Flushed partial index #1110 to disk.
+Flushed partial index #1111 to disk.
+Flushed partial index #1112 to disk.
+Flushed partial index #1113 to disk.
+Flushed partial index #1114 to disk.
+Flushed partial index #1115 to disk.
+Flushed partial index #1116 to disk.
+Processed 4360000 docs...
+Flushed partial index #1117 to disk.
+Flushed partial index #1118 to disk.
+Flushed partial index #1119 to disk.
+Flushed partial index #1120 to disk.
+Flushed partial index #1121 to disk.
+Flushed partial index #1122 to disk.
+Flushed partial index #1123 to disk.
+Flushed partial index #1124 to disk.
+Flushed partial index #1125 to disk.
+Flushed partial index #1126 to disk.
+Processed 4370000 docs...
+Flushed partial index #1127 to disk.
+Flushed partial index #1128 to disk.
+Flushed partial index #1129 to disk.
+Flushed partial index #1130 to disk.
+Flushed partial index #1131 to disk.
+Flushed partial index #1132 to disk.
+Flushed partial index #1133 to disk.
+Flushed partial index #1134 to disk.
+Flushed partial index #1135 to disk.
+Flushed partial index #1136 to disk.
+Processed 4380000 docs...
+Flushed partial index #1137 to disk.
+Flushed partial index #1138 to disk.
+Flushed partial index #1139 to disk.
+Flushed partial index #1140 to disk.
+Flushed partial index #1141 to disk.
+Flushed partial index #1142 to disk.
+Flushed partial index #1143 to disk.
+Flushed partial index #1144 to disk.
+Flushed partial index #1145 to disk.
+Flushed partial index #1146 to disk.
+Processed 4390000 docs...
+Flushed partial index #1147 to disk.
+Flushed partial index #1148 to disk.
+Flushed partial index #1149 to disk.
+Flushed partial index #1150 to disk.
+Flushed partial index #1151 to disk.
+Flushed partial index #1152 to disk.
+Flushed partial index #1153 to disk.
+Flushed partial index #1154 to disk.
+Flushed partial index #1155 to disk.
+Flushed partial index #1156 to disk.
+Processed 4400000 docs...
+Flushed partial index #1157 to disk.
+Flushed partial index #1158 to disk.
+Flushed partial index #1159 to disk.
+Flushed partial index #1160 to disk.
+Flushed partial index #1161 to disk.
+Flushed partial index #1162 to disk.
+Flushed partial index #1163 to disk.
+Flushed partial index #1164 to disk.
+Flushed partial index #1165 to disk.
+Flushed partial index #1166 to disk.
+Processed 4410000 docs...
+Flushed partial index #1167 to disk.
+Flushed partial index #1168 to disk.
+Flushed partial index #1169 to disk.
+Flushed partial index #1170 to disk.
+Flushed partial index #1171 to disk.
+Flushed partial index #1172 to disk.
+Flushed partial index #1173 to disk.
+Flushed partial index #1174 to disk.
+Flushed partial index #1175 to disk.
+Flushed partial index #1176 to disk.
+Processed 4420000 docs...
+Flushed partial index #1177 to disk.
+Flushed partial index #1178 to disk.
+Flushed partial index #1179 to disk.
+Flushed partial index #1180 to disk.
+Flushed partial index #1181 to disk.
+Flushed partial index #1182 to disk.
+Flushed partial index #1183 to disk.
+Flushed partial index #1184 to disk.
+Flushed partial index #1185 to disk.
+Flushed partial index #1186 to disk.
+Processed 4430000 docs...
+Flushed partial index #1187 to disk.
+Flushed partial index #1188 to disk.
+Flushed partial index #1189 to disk.
+Flushed partial index #1190 to disk.
+Flushed partial index #1191 to disk.
+Flushed partial index #1192 to disk.
+Flushed partial index #1193 to disk.
+Flushed partial index #1194 to disk.
+Flushed partial index #1195 to disk.
+Flushed partial index #1196 to disk.
+Processed 4440000 docs...
+Flushed partial index #1197 to disk.
+Flushed partial index #1198 to disk.
+Flushed partial index #1199 to disk.
+Flushed partial index #1200 to disk.
+Flushed partial index #1201 to disk.
+Flushed partial index #1202 to disk.
+Flushed partial index #1203 to disk.
+Flushed partial index #1204 to disk.
+Flushed partial index #1205 to disk.
+Flushed partial index #1206 to disk.
+Processed 4450000 docs...
+Flushed partial index #1207 to disk.
+Flushed partial index #1208 to disk.
+Flushed partial index #1209 to disk.
+Flushed partial index #1210 to disk.
+Flushed partial index #1211 to disk.
+Flushed partial index #1212 to disk.
+Flushed partial index #1213 to disk.
+Flushed partial index #1214 to disk.
+Flushed partial index #1215 to disk.
+Flushed partial index #1216 to disk.
+Processed 4460000 docs...
+Flushed partial index #1217 to disk.
+Flushed partial index #1218 to disk.
+Flushed partial index #1219 to disk.
+Flushed partial index #1220 to disk.
+Flushed partial index #1221 to disk.
+Flushed partial index #1222 to disk.
+Flushed partial index #1223 to disk.
+Flushed partial index #1224 to disk.
+Flushed partial index #1225 to disk.
+Flushed partial index #1226 to disk.
+Processed 4470000 docs...
+Flushed partial index #1227 to disk.
+Flushed partial index #1228 to disk.
+Flushed partial index #1229 to disk.
+Flushed partial index #1230 to disk.
+Flushed partial index #1231 to disk.
+Flushed partial index #1232 to disk.
+Flushed partial index #1233 to disk.
+Flushed partial index #1234 to disk.
+Flushed partial index #1235 to disk.
+Flushed partial index #1236 to disk.
+Processed 4480000 docs...
+Flushed partial index #1237 to disk.
+Flushed partial index #1238 to disk.
+Flushed partial index #1239 to disk.
+Flushed partial index #1240 to disk.
+Flushed partial index #1241 to disk.
+Flushed partial index #1242 to disk.
+Flushed partial index #1243 to disk.
+Flushed partial index #1244 to disk.
+Flushed partial index #1245 to disk.
+Flushed partial index #1246 to disk.
+Processed 4490000 docs...
+Flushed partial index #1247 to disk.
+Flushed partial index #1248 to disk.
+Flushed partial index #1249 to disk.
+Flushed partial index #1250 to disk.
+Flushed partial index #1251 to disk.
+Flushed partial index #1252 to disk.
+Flushed partial index #1253 to disk.
+Flushed partial index #1254 to disk.
+Flushed partial index #1255 to disk.
+Flushed partial index #1256 to disk.
+Processed 4500000 docs...
+Flushed partial index #1257 to disk.
+Flushed partial index #1258 to disk.
+Flushed partial index #1259 to disk.
+Flushed partial index #1260 to disk.
+Flushed partial index #1261 to disk.
+Flushed partial index #1262 to disk.
+Flushed partial index #1263 to disk.
+Flushed partial index #1264 to disk.
+Flushed partial index #1265 to disk.
+Flushed partial index #1266 to disk.
+Processed 4510000 docs...
+Flushed partial index #1267 to disk.
+Flushed partial index #1268 to disk.
+Flushed partial index #1269 to disk.
+Flushed partial index #1270 to disk.
+Flushed partial index #1271 to disk.
+Flushed partial index #1272 to disk.
+Flushed partial index #1273 to disk.
+Flushed partial index #1274 to disk.
+Flushed partial index #1275 to disk.
+Flushed partial index #1276 to disk.
+Processed 4520000 docs...
+Flushed partial index #1277 to disk.
+Flushed partial index #1278 to disk.
+Flushed partial index #1279 to disk.
+Flushed partial index #1280 to disk.
+Flushed partial index #1281 to disk.
+Flushed partial index #1282 to disk.
+Flushed partial index #1283 to disk.
+Flushed partial index #1284 to disk.
+Flushed partial index #1285 to disk.
+Flushed partial index #1286 to disk.
+Processed 4530000 docs...
+Flushed partial index #1287 to disk.
+Flushed partial index #1288 to disk.
+Flushed partial index #1289 to disk.
+Flushed partial index #1290 to disk.
+Flushed partial index #1291 to disk.
+Flushed partial index #1292 to disk.
+Flushed partial index #1293 to disk.
+Flushed partial index #1294 to disk.
+Flushed partial index #1295 to disk.
+Flushed partial index #1296 to disk.
+Processed 4540000 docs...
+Flushed partial index #1297 to disk.
+Flushed partial index #1298 to disk.
+Flushed partial index #1299 to disk.
+Flushed partial index #1300 to disk.
+Flushed partial index #1301 to disk.
+Flushed partial index #1302 to disk.
+Flushed partial index #1303 to disk.
+Flushed partial index #1304 to disk.
+Flushed partial index #1305 to disk.
+Flushed partial index #1306 to disk.
+Processed 4550000 docs...
+Flushed partial index #1307 to disk.
+Flushed partial index #1308 to disk.
+Flushed partial index #1309 to disk.
+Flushed partial index #1310 to disk.
+Flushed partial index #1311 to disk.
+Flushed partial index #1312 to disk.
+Flushed partial index #1313 to disk.
+Flushed partial index #1314 to disk.
+Flushed partial index #1315 to disk.
+Flushed partial index #1316 to disk.
+Processed 4560000 docs...
+Flushed partial index #1317 to disk.
+Flushed partial index #1318 to disk.
+Flushed partial index #1319 to disk.
+Flushed partial index #1320 to disk.
+Flushed partial index #1321 to disk.
+Flushed partial index #1322 to disk.
+Flushed partial index #1323 to disk.
+Flushed partial index #1324 to disk.
+Flushed partial index #1325 to disk.
+Flushed partial index #1326 to disk.
+Processed 4570000 docs...
+Flushed partial index #1327 to disk.
+Flushed partial index #1328 to disk.
+Flushed partial index #1329 to disk.
+Flushed partial index #1330 to disk.
+Flushed partial index #1331 to disk.
+Flushed partial index #1332 to disk.
+Flushed partial index #1333 to disk.
+Flushed partial index #1334 to disk.
+Flushed partial index #1335 to disk.
+Flushed partial index #1336 to disk.
+Processed 4580000 docs...
+Flushed partial index #1337 to disk.
+Flushed partial index #1338 to disk.
+Flushed partial index #1339 to disk.
+Flushed partial index #1340 to disk.
+Flushed partial index #1341 to disk.
+Flushed partial index #1342 to disk.
+Flushed partial index #1343 to disk.
+Flushed partial index #1344 to disk.
+Flushed partial index #1345 to disk.
+Flushed partial index #1346 to disk.
+Processed 4590000 docs...
+Flushed partial index #1347 to disk.
+Flushed partial index #1348 to disk.
+Flushed partial index #1349 to disk.
+Flushed partial index #1350 to disk.
+Flushed partial index #1351 to disk.
+Flushed partial index #1352 to disk.
+Flushed partial index #1353 to disk.
+Flushed partial index #1354 to disk.
+Flushed partial index #1355 to disk.
+Flushed partial index #1356 to disk.
+Processed 4600000 docs...
+Flushed partial index #1357 to disk.
+Flushed partial index #1358 to disk.
+Flushed partial index #1359 to disk.
+Flushed partial index #1360 to disk.
+Flushed partial index #1361 to disk.
+Flushed partial index #1362 to disk.
+Flushed partial index #1363 to disk.
+Flushed partial index #1364 to disk.
+Flushed partial index #1365 to disk.
+Flushed partial index #1366 to disk.
+Processed 4610000 docs...
+Flushed partial index #1367 to disk.
+Flushed partial index #1368 to disk.
+Flushed partial index #1369 to disk.
+Flushed partial index #1370 to disk.
+Flushed partial index #1371 to disk.
+Flushed partial index #1372 to disk.
+Flushed partial index #1373 to disk.
+Flushed partial index #1374 to disk.
+Flushed partial index #1375 to disk.
+Flushed partial index #1376 to disk.
+Processed 4620000 docs...
+Flushed partial index #1377 to disk.
+Flushed partial index #1378 to disk.
+Flushed partial index #1379 to disk.
+Flushed partial index #1380 to disk.
+Flushed partial index #1381 to disk.
+Flushed partial index #1382 to disk.
+Flushed partial index #1383 to disk.
+Flushed partial index #1384 to disk.
+Flushed partial index #1385 to disk.
+Flushed partial index #1386 to disk.
+Processed 4630000 docs...
+Flushed partial index #1387 to disk.
+Flushed partial index #1388 to disk.
+Flushed partial index #1389 to disk.
+Flushed partial index #1390 to disk.
+Flushed partial index #1391 to disk.
+Flushed partial index #1392 to disk.
+Flushed partial index #1393 to disk.
+Flushed partial index #1394 to disk.
+Flushed partial index #1395 to disk.
+Flushed partial index #1396 to disk.
+Processed 4640000 docs...
+Flushed partial index #1397 to disk.
+Flushed partial index #1398 to disk.
+Flushed partial index #1399 to disk.
+{"Index Size": 1913, "Elapsed Time": 351, "Number of Lists": 2730497, "Average List Size": 44.08}
+
+real	5m55.259s
+user	20m37.146s
+sys	0m26.914s
+
+================================================================================
+INDEX FILE ANALYSIS
+================================================================================
+Index Directory Contents:
+total 1.9G
+-rw-r--r-- 1 guilherme13c guilherme13c  66M May 31 13:47 document_index.json
+-rw-r--r-- 1 guilherme13c guilherme13c 1.7G May 31 13:47 inverted_index.jsonl
+-rw-r--r-- 1 guilherme13c guilherme13c 166M May 31 13:47 term_lexicon.json
+
+Total Index Size:
+1.9G	indexes
+
+document_index.json: 66M (0 lines)
+inverted_index.jsonl: 1.7G (2730497 lines)
+term_lexicon.json: 166M (0 lines)
+
+Term Lexicon Analysis:
+Total unique terms: 2730497
+Min document frequency: 1
+Max document frequency: 741779
+Average document frequency: 44.08
+Terms with DF=1: 1711964
+Terms with DF>100: 42863
+
+================================================================================
+QUERY PROCESSING PERFORMANCE
+================================================================================
+Test Queries File: queries.txt
+Number of Test Queries: 5
+
+Testing TFIDF Ranking:
+Command: python3 processor.py -i indexes -q queries.txt -r TFIDF
+Exit Code: 0
+Total Time:  seconds
+Average Time per Query:  seconds
+Results Analysis:
+Queries processed: 5
+Queries with results: 5
+Total results returned: 50
+Average results per query: 10.00
+Score range: 20.6470 - 36.2275
+Average score: 25.5434
+
+Testing BM25 Ranking:
+Command: python3 processor.py -i indexes -q queries.txt -r BM25
+Exit Code: 0
+Total Time:  seconds
+Average Time per Query:  seconds
+Results Analysis:
+Queries processed: 5
+Queries with results: 5
+Total results returned: 50
+Average results per query: 10.00
+Score range: 15.7454 - 26.0880
+Average score: 20.0205
+
+Ranking Function Comparison:
+TFIDF queries: 5
+BM25 queries: 5
+TFIDF avg score: 25.5434
+BM25 avg score: 20.0205
+Top-10 overlap (first query): 4/10 documents
+
+================================================================================
+PERFORMANCE SUMMARY
+================================================================================
+1.9G
+=== KEY METRICS ===
+Indexer statistics not available
+Index directory size: 
+Test completed successfully!
+Results saved to: performance_results.txt
